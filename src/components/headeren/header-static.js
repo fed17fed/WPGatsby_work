@@ -8,7 +8,7 @@ import Nav from './nav';
 import './style.scss';
 import defaultSiteLogoUrl from '../../images/logo.png';
 
-const Header = ( { data } ) => {
+const HeaderEn = ( { data } ) => {
 
 	const { header: { siteTitle, siteTagLine, siteLogoUrl }, headerMenuItems } = data.HWGraphQL;
 	const siteLogoURL = siteLogoUrl ? siteLogoUrl : defaultSiteLogoUrl;	
@@ -37,4 +37,4 @@ const Header = ( { data } ) => {
  *  Exporting Just the footer as well without static query for storybook,
  *  as static query does not work in storybook
  */
-export { Header };
+export { HeaderEn };

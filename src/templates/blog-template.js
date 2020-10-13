@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Layout from "../components/layout";
 
-const BlogTemplate = ( props ) => {
+const BlogTemplate = ( props ) => {    
 
 	const { pageContext: { nodes } } = props;
 
@@ -24,7 +24,7 @@ const BlogTemplate = ( props ) => {
 							excerptText = content
 								.substr( 0, Math.min( excerptText.length, excerptText.lastIndexOf('') ) )
 								.concat( '...' )
-						}
+						}						
 
 						return (
 							<article

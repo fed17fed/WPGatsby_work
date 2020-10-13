@@ -76,7 +76,7 @@ module.exports = async ( { actions, graphql } ) => {
 
 		// 2. Create Single PAGE: Loop through all categories and create single archive page for posts.
 		categories &&
-		categories.map( ( category ) => {
+		categories.map( ( category ) => {			
 
 			/**
 			 * Create Archive Pages with Pagination.

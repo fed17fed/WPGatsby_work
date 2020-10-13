@@ -180,7 +180,9 @@ module.exports = async ( { actions, graphql } ) => {
 				const { HWGraphQL: { pageBy, posts, allPosts } } = data;
 
 				let allThePosts = [];
-				allPosts.nodes && allPosts.nodes.map( post => {
+				allPosts.nodes && allPosts.nodes.map( post => {					
+
+				
 
 					// Push the categories data in form of an array, to make it searchable
 					let postData = post;
@@ -199,7 +201,7 @@ module.exports = async ( { actions, graphql } ) => {
 	};
 
 	// When the above fetchPosts is resolved, then create page and pass the data as pageContext to the page template.
-	await fetchPosts().then( ( { page, posts, allPosts } ) => {
+	await fetchPosts().then( ( { page, posts, allPosts } ) => {  
 
 		createPage( {
 			path: `/`,
