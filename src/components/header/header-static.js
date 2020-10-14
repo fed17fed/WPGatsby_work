@@ -13,6 +13,7 @@ const Header = ( { data } ) => {
 	const { header: { siteTitle, siteTagLine, siteLogoUrl }, headerMenuItems } = data.HWGraphQL;
 	const siteLogoURL = siteLogoUrl ? siteLogoUrl : defaultSiteLogoUrl;
 
+	
 	return (
 		<header className="site-header-container container">
 			<div className="site-header">
@@ -26,7 +27,9 @@ const Header = ( { data } ) => {
 						<p className="site-brand__description">{ siteTagLine }</p>
 					</div>
 				</div>
-
+				
+                <p><Link to="/">Russian</Link></p>
+                <p><Link to="/en">English</Link></p>
 				<Nav headerMenuItems={ headerMenuItems }/>
 			</div>
 		</header>
