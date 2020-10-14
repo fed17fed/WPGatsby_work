@@ -72,8 +72,16 @@ module.exports = async ( { actions, graphql } ) => {
 			// If its not a custom template, create the page.
 			if ( ! customTemplates.includes( page.uri ) ) {
 
+				let pageuri = page.uri;
+
+				if (pageuri.indexOf("-en") !== -1) {
+					pageuri = pageuri.replace("-en", "");
+				} else {
+					pageuri = pageuri;
+				}
+
 				createPage( {
-					path: `${ page.uri }`,
+					path: `${ pageuri }`,
 					component: slash( singlePageTemplate ),
 					context: { ...page, categories }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
 				} );

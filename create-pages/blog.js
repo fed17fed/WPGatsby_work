@@ -76,8 +76,16 @@ module.exports = async ( { actions, graphql } ) => {
 				return;
 			}
 
+			let pageuri = page.slug;
+
+				if (pageuri.indexOf("-en") !== -1) {
+					pageuri = pageuri.replace("-en", "");
+				} else {
+					pageuri = pageuri;
+				}
+
 			createPage( {
-				path: `blog/${ page.slug }`,
+				path: `blog/${ pageuri }`,
 				component: slash( singlePageTemplate ),
 				context: { ...page }, // pass single post page data in context, so its available in the singlePagetTemplate in props.pageContext.
 			} );

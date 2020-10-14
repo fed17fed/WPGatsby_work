@@ -21,6 +21,10 @@ export const normalizePath = path => {
 		}
 	}
 
+	if (path.indexOf("-en") !== -1) {
+		path.replace("-en", " ");
+	}
+
 	return path;
 
 }

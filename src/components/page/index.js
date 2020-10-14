@@ -39,7 +39,7 @@ const Page = ( props ) => {
 						<section className="page-content">
 							{/* Uncomment this if you need featured image to be displayed here*/}
 							{ ! isEmpty( data.featuredImage ) ? (
-								<Img fluid={data.featuredImage.sourceUrlSharp.childImageSharp.fluid} alt={ data.altText ? data.altText : data.title } />
+								<Img fluid={data.featuredImage.node.sourceUrlSharp.childImageSharp.fluid} alt={ data.altText ? data.altText : data.title } />
 							) : (
 								<Img fluid={imgData.file.childImageSharp.fluid} alt="Default" />
 							) }
