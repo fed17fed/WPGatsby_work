@@ -31,31 +31,50 @@ const Page = ( props ) => {
 	return (
 		<>
 			{ ! isEmpty( data )  ? (
-				<div className="page-container wrapper">
+				<div className="container wrapper">
 					{ ! isEmpty( data.title )  ? (
 						<h2>{ data.title }</h2>
 					) : null }
-					<div className="page-content-wrap">
-						<section className="page-content">
+					<div className="row">
+					    <aside className="col-md-3 aside">
+							{/* Taxonomy Widget */}
+							<Taxonomies taxonomies={data.menuItems} category={data.categories}/>
+						</aside>
+						<section className="col-md-9">
 							{/* Uncomment this if you need featured image to be displayed here*/}
 							{ ! isEmpty( data.featuredImage ) ? (
 								<Img fluid={data.featuredImage.node.sourceUrlSharp.childImageSharp.fluid} alt={ data.altText ? data.altText : data.title } />
-							) : (
-								<Img fluid={imgData.file.childImageSharp.fluid} alt="Default" />
-							) }
+							) :  null }
 
 							{ ! isEmpty( data.content ) ? (
-								<div
+								<div className="page-block"
 									dangerouslySetInnerHTML={ {
 										__html: data.content,
 									} }
 								/>
 							) : null }
-						</section>
-						<aside className="aside">
-							{/* Taxonomy Widget */}
-							<Taxonomies taxonomies={ data.categories }/>
-						</aside>
+							{ ! isEmpty( data.frontPageMetaServices.block1 ) ? (
+								<div className="page-block"
+									dangerouslySetInnerHTML={ {
+										__html: data.frontPageMetaServices.block1,
+									} }
+								/>
+							) : null }
+							{ ! isEmpty( data.frontPageMetaServices.block2 ) ? (
+								<div className="page-block"
+									dangerouslySetInnerHTML={ {
+										__html: data.frontPageMetaServices.block2,
+									} }
+								/>
+							) : null }
+							{ ! isEmpty( data.frontPageMetaServices.block3 ) ? (
+								<div className="page-block"
+									dangerouslySetInnerHTML={ {
+										__html: data.frontPageMetaServices.block3,
+									} }
+								/>
+							) : null }
+						</section>						
 					</div>
 				</div>
 			) : (

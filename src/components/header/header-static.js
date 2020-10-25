@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'gatsby-link';
 import { LanguageSelector } from "../languageselector.js";
 /**
@@ -6,7 +7,7 @@ import { LanguageSelector } from "../languageselector.js";
  */
 import Nav from './nav';
 import './style.scss';
-import defaultSiteLogoUrl from '../../images/logo.png';
+import defaultSiteLogoUrl from '../../images/logowg.png';
 
 const Header = ( { data } ) => {
 
@@ -18,7 +19,7 @@ const Header = ( { data } ) => {
 			<div className="site-header">
 				<div className="site-brand">
 					<Link to="/">
-						<img className="site-brand__logo" src={ siteLogoURL } width="68" height="55"
+						<img className="site-brand__logo" src={ siteLogoURL } width="200" height="55"
 						     alt="header logo"/>
 					</Link>
 					<div>

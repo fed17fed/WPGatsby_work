@@ -26,6 +26,10 @@
 .site-brand {
 	display: flex;
 	align-items: center;
+	a {
+		width: 200px;
+        margin-right: 15px;
+	}
 }
 
 // Menu

@@ -38,7 +38,7 @@ const Post = ( { post } ) => {
 					) : null }
 					<Link
 						className="featured-post-section__read-more"
-						to={ post.uri }
+						to={ post.uri.replace("-en", "") }
 					>
 						Read More
 					</Link>

@@ -10,7 +10,7 @@ const Single = ( { data } ) => {
 		return null;
 	}
 
-	const { id, postId, title, content, featuredImage, categories } = data;
+	const { id, postId, title, content, featuredImage, menuItems } = data;
 
 	return (
 		<div className="post-container wrapper">
@@ -35,7 +35,7 @@ const Single = ( { data } ) => {
 				</article>
 				<aside className="aside">
 					{/* Taxonomy Widget */}
-					<Taxonomies taxonomies={ categories }/>
+					<Taxonomies taxonomies={ menuItems }/>
 				</aside>
 			</div>
 		</div>

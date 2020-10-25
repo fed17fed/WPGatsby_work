@@ -77,7 +77,9 @@ module.exports = async ( { actions, graphql } ) => {
 		// 2. Create Single PAGE: Loop through all categories and create single archive page for posts.
 		categories &&
 		categories.map( ( category ) => {			
-
+			  
+			let pageuri = category.node.uri;				
+				pageuri = pageuri.replace("-en", "");
 			/**
 			 * Create Archive Pages with Pagination.
 			 * This will create a each paginaion page in this loop at different URLs ( category.node.uri ) e.g. /category/adventure/
@@ -90,7 +92,7 @@ module.exports = async ( { actions, graphql } ) => {
 				createPage: createPage,
 				pageTemplate: singlePageTemplate,
 				pageLength: 2, // This is optional and defaults to 10 if not used
-				pathPrefix: `${ category.node.uri.replace(/^\/|\/$/g, '') }`, // This is optional and defaults to an empty string if not used ( replaced the begining and trailing slash )
+				pathPrefix: `${ pageuri.replace(/^\/|\/$/g, '') }`, // This is optional and defaults to an empty string if not used ( replaced the begining and trailing slash )
 				context: { ...category }, // This is optional and defaults to an empty object if not used
 			})
 

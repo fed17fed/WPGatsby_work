@@ -8,7 +8,6 @@ import { each, isEmpty } from 'lodash';
 import classnames from 'classnames';
 
 import DropdownIcon from '../icons/dropdown-icon';
-import { normalizePath } from "../../utils/functions";
 
 const Nav = ( props ) => {
 	const { headerMenuItems } = props;
@@ -69,7 +68,7 @@ const Nav = ( props ) => {
 								const parentMenuLink = (
 									<Link
 										className="header-nav__menu-link"
-										to={ normalizePath( menu.node.url ) }
+										to={ menu.node.path.replace("-en", "") }
 									>
 										{ menu.node.label }
 									</Link>
@@ -118,7 +117,7 @@ const Nav = ( props ) => {
 														>
 															<Link
 																className="header-nav__submenu-link"
-																to={ normalizePath( subMenu.node.url ) }
+																to={ subMenu.node.path.replace("-en", "") }
 															>
 																{ subMenu.node.label }
 															</Link>

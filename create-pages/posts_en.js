@@ -4,57 +4,57 @@ const singlePostPageTemplate = require.resolve(`../src/templates/post/index.js`)
 // Get all the posts.
 const GET_POSTS = `
 query GET_POSTS {
-  HWGraphQL {
-    posts(first: 5000, where: {language: RU}) {
-      nodes {
-        id
-        title
-        excerpt
-        content
-		date
-		slug
-        uri
-		featuredImage {
-			node {
-			altText
-			sourceUrl
-            sourceUrlSharp {
-              childImageSharp {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-               }
+    HWGraphQL {
+        posts(first: 5000, where: {language: EN}) {
+          nodes {
+            id
+            title
+            excerpt
+            content
+            date
+            slug
+            uri
+            featuredImage {
+              node {
+                altText
+                sourceUrl
+                sourceUrlSharp {
+                  childImageSharp {
+                    fluid {
+                      base64
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
+                  }
+                }
+              }
             }
-		  }
-		 }
+          }
         }
-      }
-    }
-    categories(first: 5) {
-	    edges {
-	      node {
-	        id
-	        name
-	        slug
-	        uri
-	      }
-	    }
-	 }
-	menuItems(where: {location: MENU_1}) {
-        edges {
+        categories(first: 5, where: {language: EN}) {
+          edges {
             node {
               id
-			  menuItemId
-			  label
-			  url
-			  path
-           }
+              name
+              slug
+              uri
+            }
+          }
         }
-    }
-  }
+        menuItems(where: {location: MENU_1___EN}) {
+          edges {
+            node {
+              id
+              menuItemId
+              label
+              url
+              path
+            }
+          }
+        }
+      }
 }
 `;
 

@@ -5,7 +5,7 @@ const frontPageTemplate = require.resolve(`../src/templates/front-page/index.js`
 const GET_FRONT_PAGE = `
 query GET_FRONT_PAGE {
   HWGraphQL {
-	  pageBy(pageId: 30) {
+	  pageBy(pageId: 38) {
 	    title
 	    frontPageMeta {
 	      fieldGroupName
@@ -204,7 +204,7 @@ module.exports = async ( { actions, graphql } ) => {
 	await fetchPosts().then( ( { page, posts, allPosts } ) => {  
 
 		createPage( {
-			path: `/`,
+			path: `/en/`,
 			component: slash( frontPageTemplate ),
 			context: {
 				page,
