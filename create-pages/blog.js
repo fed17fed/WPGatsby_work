@@ -27,7 +27,9 @@ query GET_POSTS {
 	                  aspectRatio
 	                  src
 	                  srcSet
-	                  sizes
+					  sizes
+					  srcWebp
+                      srcSetWebp
 	                }
 	              }
 				}

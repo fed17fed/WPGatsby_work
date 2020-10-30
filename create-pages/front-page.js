@@ -4,167 +4,203 @@ const frontPageTemplate = require.resolve(`../src/templates/front-page/index.js`
 // Get all the front page data.
 const GET_FRONT_PAGE = `
 query GET_FRONT_PAGE {
-  HWGraphQL {
-	  pageBy(pageId: 30) {
-	    title
-	    frontPageMeta {
-	      fieldGroupName
-	      banner {
-	        fieldGroupName
-	        title
-	        description
-	        image {
-	            id
-	            altText
-	            sourceUrl
-	            sourceUrlSharp {
-	              childImageSharp {
-	                fluid {
-	                  base64
-	                  aspectRatio
-	                  src
-	                  srcSet
-	                  sizes
-	               }
-	            }
-	          }
-	        }
-	        pageLink {
-	          ... on hwgraphql_Page {
-	            id
-	            uri
-	          }
-	        }
-	        pageLinkText
-	      }
-	      searchSection {
-	        fieldGroupName
-	        searchLabel
-	        backgroundImage {
-	          id
-	          altText
-	          sourceUrl
-	          srcSet
-	          sizes
-	          mediaDetails {
-	            width
-	            height
-	          }
-	        }
-	        taxonomies {
-	          name
-	          uri
-	        }
-	        taxonomyIconOne {
-	          id
-	          altText
-	          sourceUrl
-	        }
-	        taxonomyIconTwo {
-	          id
-	          altText
-	          sourceUrl
-	        }
-	        taxonomyIconThree {
-	          id
-	          altText
-	          sourceUrl
-	        }
-	      }
-	      featuredPostsSection {
-	        heading
-	        featuredPosts {
-	          ... on hwgraphql_Post {
-	            id
-	            title
-	            excerpt
-	            date
-	            uri
-				featuredImage {
-				  node {
-					altText
-					sourceUrl
-		            sourceUrlSharp {
-		              childImageSharp {
-		                fluid {
-		                  base64
-		                  aspectRatio
-		                  src
-		                  srcSet
-		                  sizes
-		               }
-		            }
-				  }
-				 }
-		        }
-	          }
-	        }
-	      }
-	    }
-	  }
-	  posts(first: 3) {
-	    nodes {
-	      id
-	      title
-	      excerpt
-	      date
-	      uri
+	HWGraphQL {
+		pageBy(pageId: 13) {
+		  title
+		  content
+		  uri
 		  featuredImage {
-		   node {
-			altText
-			sourceUrl
-            sourceUrlSharp {
-              childImageSharp {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                }
-              }
-            }
-		  }
-		 }
-	    }
-	  }
-	  
-	  allPosts: posts( first: 5000 ) {
-	      nodes {
-	        id
-	        title
-	        excerpt
-	        content
-	        date
-	        uri	        
-	        categories {
-	          edges {
-	            node {
-	              name
-	            }
-	          }
-	        }
-			featuredImage {
-				node {
-				altText
-				sourceUrl
-	            sourceUrlSharp {
-	              childImageSharp {
-	                fluid {
-	                  base64
-	                  aspectRatio
-	                  src
-	                  srcSet
-	                  sizes
-	                }
-	              }
+			node {
+			  altText
+			  sourceUrl
+			  sourceUrlSharp {
+				childImageSharp {
+				  fluid(maxWidth: 1920) {
+					base64
+					aspectRatio
+					srcSet
+					src
+					sizes
+					srcSetWebp
+					srcWebp
+				  }
 				}
 			  }
-	        }
-	      }
-	    }
-  }
-}
+			}
+		  }
+		  AcfHome {
+			screen1 {
+			  title
+			  subtitle
+			  orderButtonBlock1
+			  siteType {
+				titleType
+				iconSite {
+				  altText
+				  sourceUrl
+				  sourceUrlSharp {
+					childImageSharp {
+					  fluid {
+						base64
+						aspectRatio
+						src
+						srcSet
+						sizes
+						srcSetWebp
+						srcWebp
+					  }
+					}
+				  }
+				}
+				nameSite {
+				  site1
+				  site2
+				}
+			  }
+			}
+			screen2 {
+			  title
+			  orderButtonBlock2
+			  stagesCreation {
+				titleType
+				descSite
+				iconSite {
+				  altText
+				  sourceUrl
+				  sourceUrlSharp {
+					childImageSharp {
+					  fluid {
+						base64
+						aspectRatio
+						srcSet
+						src
+						sizes
+						srcSetWebp
+						srcWebp
+					  }
+					}
+				  }
+				}
+			  }
+			}
+			screen3 {
+			  title
+			  subtitle
+			  siteType {
+				titleType
+				nameSite
+				iconSite {
+				  altText
+				  sourceUrl
+				  sourceUrlSharp {
+					childImageSharp {
+					  fluid {
+						base64
+						aspectRatio
+						srcSet
+						src
+						sizes
+						srcWebp
+						srcSetWebp
+					  }
+					}
+				  }
+				}
+			  }
+			}
+			screen4 {
+				title
+				subtitle
+				seeAll
+				orderButtonBlock1
+				siteType {
+				  nameSiteType1
+				  nameSiteType2
+				  nameSiteType3
+				  nameSiteType4
+				  businessCardwebsite {
+					nameSite  
+					images {
+					  altText
+					  sourceUrl					  
+					  sourceUrlSharp {
+						childImageSharp {
+						  fluid {
+							base64
+							aspectRatio
+							srcSet
+							src
+							sizes
+							srcSetWebp
+							srcWebp
+						  }
+						}
+					  }
+					}
+				  }
+				  corporateWebsites {
+					images {
+					  altText
+					  sourceUrl
+					  sourceUrlSharp {
+						childImageSharp {
+						  fluid {
+							base64
+							aspectRatio
+							src
+							srcSet
+							sizes
+							srcSetWebp
+							srcWebp
+						  }
+						}
+					  }
+					}
+				  }
+				  landPage {
+					images {
+					  altText
+					  sourceUrl
+					  sourceUrlSharp {
+						childImageSharp {
+						  fluid {
+							base64
+							aspectRatio
+							src
+							srcSet
+							sizes
+							srcSetWebp
+							srcWebp
+						  }
+						}
+					  }
+					}
+				  }
+				  onlineShops {
+					images {
+					  altText
+					  sourceUrl
+					  sourceUrlSharp {
+						childImageSharp {
+						  fluid {
+							base64
+							aspectRatio
+							src
+							srcSet
+							sizes
+							srcSetWebp
+							srcWebp
+						  }
+						}
+					  }
+					}
+				  }
+				}
+			  }
+		  }
+		}
+	  }
+   }
 `;
 
 module.exports = async ( { actions, graphql } ) => {
@@ -177,50 +213,19 @@ module.exports = async ( { actions, graphql } ) => {
 		return await graphql( GET_FRONT_PAGE )
 			.then( ( { data } ) => {
 
-				const { HWGraphQL: { pageBy, posts, allPosts } } = data;
+				const { HWGraphQL: { pageBy } } = data;				
 
-				let allThePosts = [];
-				allPosts.nodes && allPosts.nodes.map( post => {					
-
-				
-
-					// Push the categories data in form of an array, to make it searchable
-					let postData = post;
-					postData.categoriesData = [];
-
-					postData.categories.edges.map( category => {
-						postData.categoriesData.push( category.node.name );
-					} );
-
-					allThePosts.push( postData );
-
-				} );
-
-				return { page: pageBy, posts: posts.nodes, allPosts: allThePosts };
+				return { page: pageBy };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then create page and pass the data as pageContext to the page template.
-	await fetchPosts().then( ( { page, posts, allPosts } ) => {  
+	await fetchPosts().then( ( { page } ) => {  
 
 		createPage( {
 			path: `/`,
 			component: slash( frontPageTemplate ),
-			context: {
-				page,
-				posts,
-				postSearchData: {
-					allPosts: allPosts,
-					options: {
-						indexStrategy: `Prefix match`,
-						searchSanitizer: `Lower Case`,
-						TitleIndex: true,
-						AuthorIndex: true,
-						CategoryIndex: true,
-						SearchByTerm: true,
-					},
-				},
-			},
+			context: { page	},
 		} );
 
 	} )

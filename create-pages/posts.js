@@ -5,7 +5,7 @@ const singlePostPageTemplate = require.resolve(`../src/templates/post/index.js`)
 const GET_POSTS = `
 query GET_POSTS {
   HWGraphQL {
-    posts(first: 5000, where: {language: RU}) {
+    posts(first: 5000) {
       nodes {
         id
         title
@@ -25,7 +25,9 @@ query GET_POSTS {
                   aspectRatio
                   src
                   srcSet
-                  sizes
+				  sizes
+				  srcWebp
+                  srcSetWebp
                }
             }
 		  }
@@ -43,7 +45,7 @@ query GET_POSTS {
 	      }
 	    }
 	 }
-	menuItems(where: {location: MENU_1}) {
+	 menuItems(where: {location: TOP, parentId: "6"}) {
         edges {
             node {
               id

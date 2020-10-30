@@ -6,7 +6,7 @@ const singlePageTemplate = require.resolve(`../src/templates/page/index.js`);
 const GET_SERVICES = `
 query GET_SERVICES {
 	HWGraphQL {
-		pageBy(pageId: 141) {
+		pageBy(pageId: 21) {
 		  title
 		  content
 		  slug
@@ -14,13 +14,13 @@ query GET_SERVICES {
 		  date
 		  uri
 		  pageId
-		  frontPageMetaServices {
+		  AcfServices {
 			block1
 			block2
 			block3
 		  }
 		}
-		categories(where: {name: "Сайты и интернет-магазины"}) {
+		categories(where: {name: "Websites and online stores"}) {
 		  edges {
 			node {
 			  id
@@ -30,7 +30,7 @@ query GET_SERVICES {
 			}
 		  }
 		}
-		menuItems(where: {location: MENU_1}) {
+		menuItems(where: {location: TOP, parentId: "6"}) {
 			edges {
 			  node {
 				id

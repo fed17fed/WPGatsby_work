@@ -17,11 +17,15 @@ const Single = ( { data } ) => {
 			<div className="entry-header">
 				<h1 className="entry-title" dangerouslySetInnerHTML={{ __html: title }} />
 			</div>
-			<div className="post-content-wrap">
+			<div className="row">
+			    <aside className="col-md-3 aside">
+					{/* Taxonomy Widget */}
+					<Taxonomies taxonomies={ menuItems }/>
+				</aside>
 				<article
 					data-id={id}
 					id={`post-${postId}`}
-					className={`post-${postId} post-content`}
+					className={`post-${postId} col-md-9 post-content`}
 				>
 
 					{/* Featured Image */}
@@ -33,10 +37,7 @@ const Single = ( { data } ) => {
 					/>
 					{/* .entry-content */}
 				</article>
-				<aside className="aside">
-					{/* Taxonomy Widget */}
-					<Taxonomies taxonomies={ menuItems }/>
-				</aside>
+				
 			</div>
 		</div>
 	)

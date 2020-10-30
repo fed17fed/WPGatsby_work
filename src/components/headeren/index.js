@@ -29,7 +29,7 @@ export default ( props ) => {
 						      siteTitle
 						      favicon
 						    }
-						    headerMenuItems: menuItems(where: {location: HCMS_MENU_HEADER___EN, parentId: "17"}) {
+						    headerMenuItems: menuItems(where: {location: HCMS_MENU_HEADER, parentId: "5"}) {
 						      edges {
 						        node {
 						          id

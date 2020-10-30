@@ -1,5 +1,5 @@
 import React from 'react';
-import config from '../../../../client-config';
+//import config from '../../../../client-config';
 import Link from 'gatsby-link';
 import { isEmpty } from 'lodash';
 import './style.scss';
@@ -9,41 +9,27 @@ import heroDefaultImgUrl from '../../../images/home/mountain-illustration.png';
 
 const Hero = ( props ) => {
 
-	const { title, description, image, pageLinkText, pageLink } = props.data;
+	const {  content, featuredImage } = props.data;
 
 	return ! isEmpty( props.data ) ? (
-		<div className="hero-section wrapper">
-			<div className="hero-left">
-				{ title ? (
-					<h2>{ title }</h2>
-				) : (
-					<h2>{ config.heroSection.heroTitle }</h2>
-				) }
-				{ description ? (
-					<p className="hero-section__description">
-						{ description }
-					</p>
-				) : (
-					<p>{ config.heroSection.heroDescription }</p>
-				) }
-				{ isEmpty( pageLink ) ? (
-					<Link to="/blog/">
-						<button className="button-secondary">{ pageLinkText }</button>
-					</Link>
-				) : (
-					<Link to={ ! isEmpty ( pageLink.uri ) ? pageLink.uri : '/blog/'  }>
-						<button className="button-secondary">{ pageLinkText }</button>
-					</Link>
-				) }
-			</div>
-			<div className="hero-right">
-				{ ! isEmpty( image ) ? (
-					<Img fluid={ image.sourceUrlSharp.childImageSharp.fluid } alt={ image.altText ? image.altText : 'Banner' } />
+	<div>
+		<div className="hero-right">
+				{ ! isEmpty( featuredImage ) ? (
+					<Img fluid={ featuredImage.node.sourceUrlSharp.childImageSharp.fluid } alt={ featuredImage.node.altText ? featuredImage.node.altText : 'Banner' } />
 				) : (
 					<img src={ heroDefaultImgUrl } alt="Hero" />
 				) }
-			</div>
 		</div>
+		<div className="hero-section wrapper">
+			<div className="hero-buton">				
+				{ isEmpty( content ) ? (
+					<Link to="/blog/">
+						<button className="button-secondary">{ content }</button>
+					</Link>
+				) : null }
+			</div>			
+		</div>
+	</div>
 	) : (
 		''
 	);

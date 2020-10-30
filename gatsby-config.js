@@ -36,7 +36,7 @@ module.exports = {
 				// This is field under which it's accessible
 				fieldName: `HWGraphQL`,
 				// Url to query from
-				url: `http://wpgatsby.wg-al.site/graphql`,
+				url: `http://qwpwg.wg-al.site/graphql`,
 				refetchInterval: 6000,
 			},
 		},

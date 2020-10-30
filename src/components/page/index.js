@@ -53,24 +53,24 @@ const Page = ( props ) => {
 									} }
 								/>
 							) : null }
-							{ ! isEmpty( data.frontPageMetaServices.block1 ) ? (
+							{ ! isEmpty( data.AcfServices.block1 ) ? (
 								<div className="page-block"
 									dangerouslySetInnerHTML={ {
-										__html: data.frontPageMetaServices.block1,
+										__html: data.AcfServices.block1,
 									} }
 								/>
 							) : null }
-							{ ! isEmpty( data.frontPageMetaServices.block2 ) ? (
+							{ ! isEmpty( data.AcfServices.block2 ) ? (
 								<div className="page-block"
 									dangerouslySetInnerHTML={ {
-										__html: data.frontPageMetaServices.block2,
+										__html: data.AcfServices.block2,
 									} }
 								/>
 							) : null }
-							{ ! isEmpty( data.frontPageMetaServices.block3 ) ? (
+							{ ! isEmpty( data.AcfServices.block3 ) ? (
 								<div className="page-block"
 									dangerouslySetInnerHTML={ {
-										__html: data.frontPageMetaServices.block3,
+										__html: data.AcfServices.block3,
 									} }
 								/>
 							) : null }

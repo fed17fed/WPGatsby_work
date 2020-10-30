@@ -120,16 +120,16 @@
 		}
 
 		&:last-child {
-			border: 2px solid $color__menu-border;
+			border: 0 !important;
 			border-radius: 45px;
-			width: 100px;
+			width: 240px !important;
 			text-align: center;
 			vertical-align: middle;
 			margin: 16px 0 0 16px;
 
 			@include mq( large ) {
 				margin: 0;
-				margin-left: 13px;
+				margin-left: 13px;				
 			}
 
 			a {
@@ -155,7 +155,9 @@
 			}
 		}
 	}
-
+.header-nav__menu-link-container-with-arrow {
+	display: flex;
+}
 	// Submenu
 	.header-nav__submenu {
 		background-color: $white;
@@ -216,3 +218,5 @@
 .mobile-menu-open {
 	position: fixed;
 }
+
+

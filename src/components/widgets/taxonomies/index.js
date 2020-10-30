@@ -9,7 +9,7 @@ const Taxonomies = ( { taxonomies, category } ) => {
 		return null;
 	}
 	const patchcurrent = window.location.pathname ;
-	let websitesname;
+	let websitesname;	
 	if (patchcurrent.indexOf("/en/") !== -1) {
 		websitesname = 'Websites and online stores';
 	   } else {
@@ -21,7 +21,7 @@ const Taxonomies = ( { taxonomies, category } ) => {
 			<ul className="taxonomies-widget-lists">
 				{ taxonomies.map( term => (					 
 					<li key={ term.node.menuItemId } className="taxonomies-widget-list">
-						<Link to={ term.node.path } className="taxonomies-widget-link">{ term.node.label }</Link>
+						<Link to={ term.node.path.replace("-en", "") } className="taxonomies-widget-link">{ term.node.label }</Link>
 					</li>
 				) ) }
 			</ul>

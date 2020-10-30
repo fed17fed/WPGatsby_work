@@ -29,19 +29,21 @@ export default ( props ) => {
 						      siteTitle
 						      favicon
 						    }
-						    headerMenuItems: menuItems(where: {location: HCMS_MENU_HEADER, parentId: "44"}) {
+						    headerMenuItems: menuItems(where: {location: HCMS_MENU_HEADER, parentId: "5"}) {
 						      edges {
 						        node {
 						          id
 						          menuItemId
 						          label
-						          url
+								  url
+								  path
 						          childItems {
 						            edges {
 						              node {
 						                menuItemId
 						                label
-						                url
+										url
+										path
 						              }
 						            }
 						          }
