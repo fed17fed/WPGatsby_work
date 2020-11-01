@@ -1,15 +1,11 @@
 import React from 'react';
-//import config from '../../../../client-config';
-//import Link from 'gatsby-link';
 import { isEmpty } from 'lodash';
 import './style.scss';
-//import '../../../images/home/mountain-illustration.png';
-//import Img from "gatsby-image";
-//import heroDefaultImgUrl from '../../../images/home/mountain-illustration.png';
+import Popapp from '../../popapp';
 
 const Screen2 = ( props ) => {
 
-	const { title, orderButtonBlock2, stagesCreation } = props.data;
+	const { title, stagesCreation } = props.data;
 
 	return ! isEmpty( props.data ) ? (
 	<div>		
@@ -46,11 +42,7 @@ const Screen2 = ( props ) => {
                 </div>
             ))}
                 <div className="screen2-button">
-                 { orderButtonBlock2 ? (
-                   <a href="/" className="screen2-but">  
-                    { orderButtonBlock2 }
-                    </a> 
-                 ) : null }   
+                <Popapp namebutton='Order a website'/>  
                 </div> 
             </div> 
 		  </div>

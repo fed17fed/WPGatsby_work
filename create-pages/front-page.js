@@ -108,6 +108,12 @@ query GET_FRONT_PAGE {
 				}
 			  }
 			}
+			screen5 {
+				title
+				subtitle
+				contText
+				telephone
+			}
 			screen4 {
 				title
 				subtitle

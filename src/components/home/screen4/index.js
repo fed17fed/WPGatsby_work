@@ -4,10 +4,11 @@ import  Link from 'gatsby-link';
 import './style.scss';
 import { Tabs, Tab } from 'react-bootstrap';
 import Slider from "react-slick";
+import Popapp from '../../popapp';
 
 const Screen4 = ( props ) => {
 
-  const { title, subtitle, seeAll, orderButtonBlock1, siteType } = props.data;
+  const { title, subtitle, seeAll, siteType } = props.data;
   const settings = {
     dots: true,
     infinite: true,
@@ -151,11 +152,7 @@ const Screen4 = ( props ) => {
           </Tab>
         </Tabs>            
                 <div className="screen4-button">
-                 { orderButtonBlock1 ? (
-                   <a href="/" className="screen4-but">  
-                    { orderButtonBlock1 }
-                    </a> 
-                 ) : null }   
+                <Popapp namebutton='Order a website'/>
                 </div>                    
             </div> 
 		  </div>	
