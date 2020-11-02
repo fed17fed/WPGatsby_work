@@ -1,0 +1,33 @@
+.form-home input,
+.form-home textarea {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #c5c5c5;
+    height: 35px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #8a8a8a;
+    background: rgba(255,255,255,0);
+    margin-bottom: 15px;
+}
+.form-home textarea {
+    padding: 7px 3px;
+    height: 80px;
+}
+.form-home button {
+    background: linear-gradient(180deg,#7dbbfc 0%,#4a8bdb 100%);
+    border-radius: 50px;
+    width: 155px;
+    height: 48px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 17px;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    box-shadow: 0px 4px 4px #c4c4c4;
+    border: 0;
+}

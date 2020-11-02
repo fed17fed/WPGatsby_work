@@ -1,61 +1,46 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
 import './style.scss';
-import Popapp from '../../popapp';
+import ContactHome from './contacthome'
 
-const Screen1 = ( props ) => {
+const Screen5 = ( props ) => {
 
-	const { title, subtitle, siteType } = props.data;
+	const { title, subtitle, contText, telephone } = props.data;
 
 	return ! isEmpty( props.data ) ? (
 	<div>		
-		<div className="container screen1">
-			<div className="screen1-title">
+		<div className="container screen5">
+        <div className="row screen5-blocks">
+            <div className="col-md-6 screen5-blocks">
+			  <div className="screen5-title">
 				{ title ? (
 					<h2>{ title }</h2>
 				) : null }
 				{ subtitle ? (
-					<p className="screen1-subtitle">
+					<p className="screen5-subtitle">
 						{ subtitle }
 					</p>
 				) : null }
-            </div>    
-            <div className="row screen1-blocks">
-               {siteType.map((term, index) => (
-                <div className="col-md-4 ">    
-                    <div className="screen1-block">                    
-                        {!isEmpty(term.iconSite.sourceUrl) ? (
-                            <div className="screen1-block__icon">
-                               <img src={term.iconSite.sourceUrl}
-                                    alt={term.iconSite.altText}
-                            />  
-                            </div>                      
-                        ) : null }
-                    {term.titleType ? 
-                    <div className="screen1-titletype">
-                        {term.titleType}
-                    </div> 
-                    : null }
-                    {term.nameSite.site1 ? 
-                    <div className="screen1-site1">
-                        {term.nameSite.site1}
-                    </div> 
-                    : null }
-                    {term.nameSite.site2 ? 
-                    <div className="screen1-site1">
-                        {term.nameSite.site2}
-                    </div> 
-                    : null }                    
-                    </div>
-                </div>
-            ))}
-                <div id='modalbuton' className="screen1-button">
-                    <Popapp namebutton='Order a consultation'/>                   
-                </div>                    
+                <hr/>
+              </div> 
+              <div className="screen5-txt">
+				{ contText ? (
+					<p>{ contText }</p>
+				) : null }
+				{ telephone ? (
+					<a href='tel:380681769645' className="screen5-tel">
+						{ telephone }
+					</a>
+				) : null }
+              </div> 
+            </div>   
+            <div className="col-md-6 screen5-blocks">
+              <ContactHome />                  
             </div> 
-		  </div>	
+		  </div>
+        </div>  	
 	</div>
 	) : null;
 };
 
-export default Screen1;
+export default Screen5;

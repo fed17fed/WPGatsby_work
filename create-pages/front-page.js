@@ -203,6 +203,32 @@ query GET_FRONT_PAGE {
 				  }
 				}
 			  }
+			  screen6 {
+				title
+				subtitle
+				reviewsTable {
+				  iconSite {
+					altText
+					sourceUrl
+					sourceUrlSharp {
+					  childImageSharp {
+						fluid {
+						  base64
+						  aspectRatio
+						  srcSet
+						  src
+						  sizes
+						  srcSetWebp
+						  srcWebp
+						}
+					  }
+					}
+				  }
+				  titleName
+				  situation
+				  reviewText
+				}
+			  }
 		  }
 		}
 	  }

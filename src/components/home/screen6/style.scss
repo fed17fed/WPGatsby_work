@@ -1,16 +1,19 @@
 
-.screen4 {    
+.screen6 {    
     font-family: "Lato",sans-serif;
     padding: 0px 50px 10px;
     margin-bottom: 0px;
 }
-.screen4-blocks{
+.screen6-blocks{
     margin-top: 60px;
 }
-.screen4-title {
+.screen6-block{   
+    padding: 15px;
+}
+.screen6-title {
     text-align: center;
 }
-.screen4-title h2 {
+.screen6-title h2 {
     font-style: normal;
     font-weight: 800;
     font-size: 36px !important;
@@ -19,7 +22,7 @@
     color: #3e3f43 !important;
     margin-bottom: 8px !important;
 }
-.screen4-subtitle {
+.screen6-subtitle {
     font-style: normal;
     font-weight: 300;
     font-size: 24px !important;
@@ -28,29 +31,37 @@
     color: #8a8a8a !important;
     text-transform: uppercase;
 }
-.screen4-titletype {
+.screen6-slider .block-img img {
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: none;
+    height: 120px;
+    width: 120px;
+}
+.screen6-titlename {
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    text-align: left;
-    color: #fff;
-    padding: 15px 0 10px;
-}
-.screen4-site1 {
-    font-style: normal;
-    font-weight: 500;
     font-size: 18px;
     line-height: 22px;
-    color: #fff;
-    padding: 10px 0 0;
-}
-.screen4-button {
-    margin-top: 80px;
     text-align: center;
-    width: 100%;
+    color: #8a8a8a;
+    margin-bottom: 5px;
 }
-.screen4-but {
+.screen6-situation {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #8a8a8a;
+}
+.screen6-reviewtext {
+    opacity: 0;
+    transition: .3s;
+    position: relative;
+}
+.screen6-but {
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -62,20 +73,20 @@
     border-radius: 50px;
     padding: 15px 20px;
 }
-.screen4-slider {
+.screen6-slider {
     max-width: 100%;;
 }
-.screen4-block {
+.screen6-block {
     padding: 20px;
 }
-.screen4-block__show {
+.screen6-block__show {
     position: relative;
     margin: 0 auto;
     background: #fff;
     box-shadow: 0px 4px 20px rgba(196,196,196,.7);
     border-radius: 10px;
 }
-.screen4-namesite {
+.screen6-namesite {
     border-radius: 10px;
     background: #fff;
     padding: 10px 20px;
@@ -107,10 +118,10 @@
 .slick-dots li button:hover:before {
     color: #2872cc;
 }   
-.screen4-seeall {
+.screen6-seeall {
     position: relative;
 }
-.screen4-seeall a {
+.screen6-seeall a {
     position: absolute;
     right: 0;
     bottom: -38px;
@@ -125,7 +136,7 @@
     box-sizing: border-box;
     border-radius: 50px;
 }
-.screen4-seeall a::after {
+.screen6-seeall a::after {
     content: '\2192';
     color: #fff;
     padding-left: 7px;
