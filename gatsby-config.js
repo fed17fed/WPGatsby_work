@@ -20,7 +20,7 @@ module.exports = {
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `Gatsby WordPress Theme`,
-				short_name: `Phoenix`,
+				short_name: `Olympweb`,
 				start_url: `/`,
 				background_color: `#eaeaea`,
 				theme_color: `#1e5663`,

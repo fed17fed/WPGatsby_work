@@ -9,7 +9,6 @@ import PropTypes from "prop-types"
 
 import './../../sass/common.scss';
 import Header from "../header";
-import HeaderEn from "../headeren";
 import Footer from "../footer";
 
 const Layout = ( { children, data }) => { 

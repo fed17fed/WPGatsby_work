@@ -188,7 +188,7 @@ query GET_FRONT_PAGE {
 					  sourceUrl
 					  sourceUrlSharp {
 						childImageSharp {
-						  fluid {
+						  fluid(maxWidth: 300) {
 							base64
 							aspectRatio
 							src

@@ -4,7 +4,7 @@ import axios from 'axios'
 import './style.scss'
 
 const ContactHome = () => {
-  const WEBSITE_URL = 'http://qwpwg.wg-al.site/';
+  const WEBSITE_URL = 'https://qwpwg.wg-al.site/';
   const FORM_ID = '367'; //Form id that provides Contact Form 7
 
   const [token, setToken] = useState('') // store token
