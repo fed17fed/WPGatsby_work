@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Link from 'gatsby-link';
-import { LanguageSelector } from "../languageselector.js";
 /**
  * Internal dependencies.
  */
@@ -28,8 +27,7 @@ const HeaderEn = ( { data } ) => {
 						<h2 className="screen-reader-text site-brand__title">{ siteTitle }</h2>
 						<p className="site-brand__description">{ siteTagLine }</p>
 					</div>
-				</div>
-                <LanguageSelector />
+				</div>                
 				<Nav headerMenuItems={ headerMenuItems }/>
 			</div>
 		</header>
