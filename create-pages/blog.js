@@ -79,12 +79,8 @@ module.exports = async ( { actions, graphql } ) => {
 			}
 
 			let pageuri = page.slug;
-
-				if (pageuri.indexOf("-en") !== -1) {
-					pageuri = pageuri.replace("-en", "");
-				} else {
-					pageuri = pageuri;
-				}
+				
+					pageuri = pageuri.replace("-en", "");	
 
 			createPage( {
 				path: `blog/${ pageuri }`,

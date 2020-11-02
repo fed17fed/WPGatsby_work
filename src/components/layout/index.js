@@ -13,9 +13,10 @@ import HeaderEn from "../headeren";
 import Footer from "../footer";
 
 const Layout = ( { children, data }) => { 
+  let  = window.location.pathname.indexOf("/en/");
   return (
     <>
-    {(window.location.pathname.indexOf("/en/") !== -1)
+    {(hadnow !== -1)
           ? <HeaderEn data={ data }/>
           : (
             <Header data={ data }/> 

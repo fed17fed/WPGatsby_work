@@ -73,12 +73,8 @@ module.exports = async ( { actions, graphql } ) => {
 			if ( ! customTemplates.includes( page.uri ) ) {
 
 				let pageuri = page.uri;
-
-				if (pageuri.indexOf("-en") !== -1) {
-					pageuri = pageuri.replace("-en", "");
-				} else {
-					pageuri = pageuri;
-				}
+				
+					pageuri = pageuri.replace("-en", "");	
 
 				createPage( {
 					path: `${ pageuri }`,
