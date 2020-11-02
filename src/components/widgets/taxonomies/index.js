@@ -8,13 +8,8 @@ const Taxonomies = ( { taxonomies, category } ) => {
 	if ( isEmpty( taxonomies ) ) {
 		return null;
 	}
-	const patchcurrent = window.location.pathname ;
-	let websitesname;	
-	if (patchcurrent.indexOf("/en/") !== -1) {
-		websitesname = 'Websites and online stores';
-	   } else {
-		websitesname = 'Сайты и интернет магазины';
-	   }
+	
+	const websitesname = 'Websites and online stores';	  
 	return (
 		<div className="taxonomies-widget">
 			<h2>{websitesname}</h2>
