@@ -1,8 +1,8 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby WordPress Theme`,
+		title: `Olympweb Webgenerator`,
 		description: `Gatsby WordPress Theme`,
-		author: `@imranhsayed`,
+		author: `@kav17`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,

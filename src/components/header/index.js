@@ -55,7 +55,7 @@ export default ( props ) => {
 				` }
 			render={ data => (
 				<>
-					<SEO title="Phoenix: Gatsby WordPress Theme" header={ data.HWGraphQL.header }/>
+					<SEO title="Olympweb: WebGenerator Gatsby" header={ data.HWGraphQL.header }/>
 					<Header data={ data }/>
 				</>
 			) }
