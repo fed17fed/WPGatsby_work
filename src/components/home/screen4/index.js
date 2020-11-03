@@ -76,9 +76,9 @@ const Screen4 = ( props ) => {
                   {siteType.businessCardwebsite.map((term, index) => (                   
                     <div className="screen4-block">
                       <div className="screen4-block__show">               
-                        {!isEmpty(term.images.sourceUrl) ? (
+                        {!isEmpty(term.images) ? (
                           <div className="block-img">                      
-                               <img src={term.images.sourceUrl}
+                               <Img fluid={ term.images.sourceUrlSharp.childImageSharp.fluid }
                                     alt={term.images.altText}
                                />                               		     
                           </div>                                                
@@ -104,9 +104,9 @@ const Screen4 = ( props ) => {
                   {siteType.corporateWebsites.map((term, index) => (                   
                     <div className="screen4-block">
                       <div className="screen4-block__show">               
-                        {!isEmpty(term.images.sourceUrl) ? (
+                        {!isEmpty(term.images) ? (
                           <div className="block-img">                      
-                               <img src={term.images.sourceUrl}
+                               <Img fluid={ term.images.sourceUrlSharp.childImageSharp.fluid }
                                     alt={term.images.altText}
                                />                               		     
                           </div>                                                
@@ -132,9 +132,9 @@ const Screen4 = ( props ) => {
                   {siteType.onlineShops.map((term, index) => (                   
                     <div className="screen4-block">
                       <div className="screen4-block__show">               
-                        {!isEmpty(term.images.sourceUrl) ? (
+                        {!isEmpty(term.images) ? (
                           <div className="block-img">                      
-                               <img src={term.images.sourceUrl}
+                               <Img fluid={ term.images.sourceUrlSharp.childImageSharp.fluid }
                                     alt={term.images.altText}
                                />                               		     
                           </div>                                                
