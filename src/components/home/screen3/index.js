@@ -3,6 +3,7 @@ import React from 'react';
 //import Link from 'gatsby-link';
 import { isEmpty } from 'lodash';
 import './style.scss';
+import Img from "gatsby-image";
 //import '../../../images/home/mountain-illustration.png';
 //import Img from "gatsby-image";
 //import heroDefaultImgUrl from '../../../images/home/mountain-illustration.png';
@@ -28,9 +29,9 @@ const Screen3 = ( props ) => {
                {siteType.map((term, index) => (
                 <div className="col-md-4 ">    
                     <div className="screen3-block">                    
-                        {!isEmpty(term.iconSite.sourceUrl) ? (
+                        {!isEmpty(term.iconSite) ? (
                             <div className="screen3-block__icon">
-                               <img src={term.iconSite.sourceUrl}
+                               <Img fluid={ term.iconSite.sourceUrlSharp.childImageSharp.fluid }
                                     alt={term.iconSite.altText}
                             />  
                             </div>                      

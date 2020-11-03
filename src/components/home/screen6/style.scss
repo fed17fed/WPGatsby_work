@@ -91,9 +91,12 @@
     background: #fff;
     padding: 10px 20px;
 }
-.block-img {    
-    max-height: 380px;
+.block6-img {    
+    max-height: 120px;
+    width: 120px;
     overflow: hidden;
+    margin: 0px auto 20px;
+    border-radius: 50%;
 }
 .slick-prev:before {
     content: '\2190';

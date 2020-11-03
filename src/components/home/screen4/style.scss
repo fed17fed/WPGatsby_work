@@ -81,8 +81,9 @@
     padding: 10px 20px;
 }
 .block-img {    
-    max-height: 380px;
+    height: 380px;
     overflow: hidden;
+    width: 278px;
 }
 .slick-prev:before {
     content: '\2190';

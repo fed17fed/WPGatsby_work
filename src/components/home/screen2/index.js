@@ -2,6 +2,7 @@ import React from 'react';
 import { isEmpty } from 'lodash';
 import './style.scss';
 import Popapp from '../../popapp';
+import Img from "gatsby-image";
 
 const Screen2 = ( props ) => {
 
@@ -19,9 +20,9 @@ const Screen2 = ( props ) => {
                {stagesCreation.map((term, index) => (
                 <div className="col-md-3 ">    
                     <div className="screen2-block">                    
-                        {!isEmpty(term.iconSite.sourceUrl) ? (
+                        {!isEmpty(term.iconSite) ? (
                             <div className="screen2-block__icon">
-                               <img src={term.iconSite.sourceUrl}
+                               <Img fluid={ term.iconSite.sourceUrlSharp.childImageSharp.fluid }
                                     alt={term.iconSite.altText}
                             />  
                             </div>                      

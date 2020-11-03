@@ -5,6 +5,7 @@ import './style.scss';
 import { Tabs, Tab } from 'react-bootstrap';
 import Slider from "react-slick";
 import Popapp from '../../popapp';
+import Img from "gatsby-image";
 
 const Screen4 = ( props ) => {
 
@@ -47,9 +48,9 @@ const Screen4 = ( props ) => {
                   {siteType.landPage.map((term, index) => (                   
                     <div className="screen4-block">
                       <div className="screen4-block__show">               
-                        {!isEmpty(term.images.sourceUrl) ? (
+                        {!isEmpty(term.images) ? (
                           <div className="block-img">                      
-                               <img src={term.images.sourceUrl}
+                               <Img fluid={ term.images.sourceUrlSharp.childImageSharp.fluid }
                                     alt={term.images.altText}
                                />                               		     
                           </div>                                                

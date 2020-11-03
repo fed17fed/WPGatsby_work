@@ -2,6 +2,7 @@ import React from 'react';
 import { isEmpty } from 'lodash';
 import './style.scss';
 import Slider from "react-slick";
+import Img from "gatsby-image";
 
 const Screen6 = ( props ) => {
 
@@ -33,9 +34,9 @@ const Screen6 = ( props ) => {
                   {reviewsTable.map((term, index) => (                   
                     <div className="screen6-block">
                       <div className="screen6-block__show">               
-                        {!isEmpty(term.iconSite.sourceUrl) ? (
-                          <div className="block-img">                      
-                               <img src={term.iconSite.sourceUrl}
+                        {!isEmpty(term.iconSite) ? (
+                          <div className="block6-img">                      
+                               <Img fluid={ term.iconSite.sourceUrlSharp.childImageSharp.fluid }
                                     alt={term.iconSite.altText}
                                />                               		     
                           </div>                                                
