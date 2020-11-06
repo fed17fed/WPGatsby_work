@@ -25,7 +25,9 @@ export default () => {
 						    footer: getFooter {
 						      copyrightText
 						      sidebarOne
-						      sidebarTwo
+							  sidebarTwo
+							  sidebarThree
+                              sidebarFour
 						      socialLinks {
 						        iconUrl
 						        iconName

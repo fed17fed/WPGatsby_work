@@ -229,6 +229,32 @@ query GET_FRONT_PAGE {
 				  reviewText
 				}
 			  }
+			  screen7 {
+				title
+				subtitle
+				tekstONas
+			  }
+			  screen8 {
+				client {
+				  images {
+					altText
+					sourceUrl
+					sourceUrlSharp {
+					  childImageSharp {
+						fluid(maxWidth: 185) {
+						  base64
+						  aspectRatio
+						  srcSet
+						  src
+						  sizes
+						  srcSetWebp
+						  srcWebp
+						}
+					  }
+					}
+				  }
+				}
+			  }
 		  }
 		}
 	  }

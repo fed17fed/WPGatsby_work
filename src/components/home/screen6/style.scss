@@ -55,11 +55,31 @@
     line-height: 19px;
     text-align: center;
     color: #8a8a8a;
+    margin-bottom: 10px;
 }
 .screen6-reviewtext {
     opacity: 0;
     transition: .3s;
     position: relative;
+}
+.screen6-reviewtext img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: -1;
+}
+.screen6-reviewtext__img1,
+.screen6-reviewtext__img2 {
+    width: 50px;
+    position: absolute;
+}
+.screen6-reviewtext__img1 {
+    top: 0;
+    left: -40px;
+}
+.screen6-reviewtext__img2 {
+    bottom: 0;
+    right: -40px;
 }
 .screen6-but {
     font-style: normal;
@@ -80,11 +100,7 @@
     padding: 20px;
 }
 .screen6-block__show {
-    position: relative;
-    margin: 0 auto;
-    background: #fff;
-    box-shadow: 0px 4px 20px rgba(196,196,196,.7);
-    border-radius: 10px;
+    
 }
 .screen6-namesite {
     border-radius: 10px;
@@ -95,18 +111,48 @@
     max-height: 120px;
     width: 120px;
     overflow: hidden;
-    margin: 0px auto 20px;
+    margin: 50px auto 20px;
     border-radius: 50%;
 }
-.slick-prev:before {
-    content: '\2190';
+.slick-center .block6-img {
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 3px solid #337cd3;
+    max-height: 170px;
+}
+.slick-center .screen6-reviewtext {
+    opacity: 1;
+    transition: .3s;
+    display: block;
+    height: 130px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #3e3f43;
+}
+.screen6-slider .slick-prev:before {
+    content: url(../../../images/icons/noun_Arrow_3022745.svg);
+    display: inline-block;
+    transform: rotate(90deg);
     font-size: 40px;    
     color: #428bdd;
+    width: 100px;
 }
-.slick-next:before {
-    content: '\2192';
+.screen6-slider .slick-prev {
+    z-index: 9;
+}
+.screen6-slider .slick-next:before {
+    content: url(../../../images/icons/noun_Arrow_3022745.svg);
+    display: inline-block;
+    transform: rotate(-90deg);
     font-size: 40px;
     color: #428bdd;
+    width: 100px;
 }
 .slick-initialized .slick-slide {
     display: flex;

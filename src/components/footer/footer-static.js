@@ -1,5 +1,4 @@
-import Link from 'gatsby-link';
-import { normalizePath } from "../../utils/functions";
+//import { normalizePath } from "../../utils/functions";
 import FacebookIcon from "../icons/facebook-icon";
 import TwitterIcon from "../icons/twitter-icon";
 import InstagramIcon from "../icons/instagram-icon";
@@ -8,7 +7,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const Footer = ( { data } ) => {
-	const { footer: { copyrightText, socialLinks, sidebarOne, sidebarTwo }, footerMenuItems } = data.HWGraphQL;
+	const { footer: { copyrightText, socialLinks, sidebarOne, sidebarTwo, sidebarThree, sidebarFour } } = data.HWGraphQL;	
 
 	const staticSocialLink = [
 		{ iconName: 'facebook', iconUrl: 'https://facebook.com/codeytek'  },
@@ -23,36 +22,19 @@ const Footer = ( { data } ) => {
 		<footer className="footer">
 
 			<div className="wrapper">
-				{/*Top section*/}
-				<div className="footer__top">
-					{ sidebarOne ? <div  dangerouslySetInnerHTML={ { __html: sidebarOne } } className="footer__sidebar-one footer-widget"/> : null }
-					{ sidebarTwo ? <div  dangerouslySetInnerHTML={ { __html: sidebarTwo } } className="footer__sidebar-two footer-widget"/> : null }
-
-					{
-						footerMenuItems.edges.length ? (
-							<div className="footer-menu-items footer-widget">
-								<h6>About the site</h6>
-								<ul>
-									{ footerMenuItems.edges.map( menu  => (
-										<li key={ menu.node.menuItemId }>
-											<Link
-												className="header-nav__menu-link"
-												to={ normalizePath( menu.node.url )  }
-											>
-												<span> > </span>
-												{ menu.node.label }
-											</Link>
-										</li>
-									)) }
-								</ul>
-							</div>
-						) : ''
-					}
+				{/*Top section*/}				
+				<div className="row  footer__top">				  	
+					{ sidebarOne ? <div  dangerouslySetInnerHTML={ { __html: sidebarOne } } className="col-md-4 footer__sidebar-one footer-widget"/> : null }
+				  <div className="col-md-8  footer2__top">
+					{ sidebarTwo ? <div  dangerouslySetInnerHTML={ { __html: sidebarTwo } } className="col-md-3 footer__sidebar-two footer-widget"/> : null }
+					{ sidebarOne ? <div  dangerouslySetInnerHTML={ { __html: sidebarThree } } className="col-md-3 footer__sidebar-one footer-widget"/> : null }
+					{ sidebarTwo ? <div  dangerouslySetInnerHTML={ { __html: sidebarFour } } className="col-md-3 footer__sidebar-two footer-widget"/> : null }
+				  </div>
 				</div>
 
 				{/*	Bottom section*/}
 				<div className="footer__bottom">
-					{ copyrightText ? <div className="copyright-text">{ copyrightText }</div> : <div className="copyright-text">Codeytek Academy 2020</div> }
+					{ copyrightText ? <div className="copyright-text">{ copyrightText }</div> : <div className="copyright-text">© Copyright WebGenerator 2017</div> }
 					{
 						socialLinksData.length ?
 							<ul className="social-links">

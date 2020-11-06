@@ -2,18 +2,50 @@ import React from 'react';
 import { isEmpty } from 'lodash';
 import './style.scss';
 import Slider from "react-slick";
-import Img from "gatsby-image";
+import Img from 'gatsby-image';
+import { useStaticQuery, graphql } from "gatsby";
 
 const Screen6 = ( props ) => {
 
   const { title, subtitle, reviewsTable } = props.data;
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+      className: "center",
+      centerMode: true,
+      infinite: true,
+      centerPadding: "0px",
+      slidesToShow: 3,
+      speed: 500
   };
+  const imgData = useStaticQuery(graphql`
+        query {
+            file(relativePath: {eq: "home/right-qs.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 50) {
+                      base64
+					            aspectRatio
+				            	srcSet
+				            	src
+					            sizes
+				            	srcSetWebp
+				            	srcWebp
+                    }
+                }
+            }
+            filetwo: file(relativePath: {eq: "home/left-qs.png"}) {
+              childImageSharp {
+                  fluid(maxWidth: 50) {
+                    base64
+                    aspectRatio
+                    srcSet
+                    src
+                    sizes
+                    srcSetWebp
+                    srcWebp
+                  }
+              }
+          }
+        }
+	`);
 
 	return ! isEmpty( props.data ) ? (
 	<div>
@@ -27,7 +59,7 @@ const Screen6 = ( props ) => {
 						{ subtitle }
 					</p>
 				) : null }                
-      </div>
+      </div>      
       <div className="screen6-blocks">            
               <div className="screen6-slider">
                 <Slider {...settings}>
@@ -51,10 +83,16 @@ const Screen6 = ( props ) => {
 			      	                    <div>{ term.situation }</div>
 			                           	) : null }
                             </div>	 
-                            <div className="screen6-reviewtext">
+                            <div className="screen6-reviewtext">                              
+                              <div className="screen6-reviewtext__img1">                              
+                                <Img fluid={imgData.filetwo.childImageSharp.fluid} alt="Default" />
+                              </div> 
                                   { term.reviewText ? (
 			      	                    <div>{ term.reviewText }</div>
 			                           	) : null }
+                              <div className="screen6-reviewtext__img2">    
+                                <Img fluid={imgData.file.childImageSharp.fluid} alt="Default" />
+                              </div>                                  
                             </div>	 	 
                       </div>                           
                     </div>                

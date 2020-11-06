@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: `Olympweb Webgenerator`,
-		description: `Gatsby WordPress Theme`,
+		description: `Turnkey website development`,
 		author: `@kav17`,
 	},
 	plugins: [
@@ -19,7 +19,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `Gatsby WordPress Theme`,
+				name: `Turnkey website development`,
 				short_name: `Olympweb`,
 				start_url: `/`,
 				background_color: `#eaeaea`,

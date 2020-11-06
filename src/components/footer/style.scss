@@ -1,8 +1,7 @@
 @import '../../sass/essentials';
 
 .footer {
-	background-image: background_url( 'footer-background.png' );
-	background-size: cover;
+	background: #f5f4fc;
 
 	.footer__top {
 		color: $white;
@@ -10,10 +9,13 @@
 		padding-left: 10px;
 		padding-right: 10px;
 	}
+	.footer2__top {
+        
+	}
 
 	.widget-title {
 		font-size: 22px;
-		color: $white;
+		color: #3e3f43;
 	}
 	h1,
 	h2,
@@ -21,8 +23,19 @@
 	h4,
 	h5,
 	h6 {
-		color: $white;
+		color: #8a8a8a;
 	}
+	a {
+		color: #8a8a8a;
+		line-height: 32px;
+	}
+}
+.footer-single-info {
+	display: flex;
+    flex-direction: column;
+}
+.foot-soc-a a {
+	color: #007bff;
 }
 
 .footer__sidebar-one,
@@ -41,12 +54,6 @@
 		width: 100%;
 		margin-bottom: 10px;
 	}
-}
-
-.footer__sidebar-one,
-.footer__sidebar-two,
-.footer-menu-items {
-	margin-bottom: 50px;
 }
 
 .footer-menu-items {
@@ -68,10 +75,14 @@
 
 .footer__bottom {
 	display: flex;
-	justify-content: space-between;
-	color: $white;
-	margin-top: 20px;
-	padding: 0 10px 30px 10px;
+    justify-content: center;
+    color: #8a8a8a;
+    margin-top: 20px;
+    padding: 0 10px 30px 10px;
+    font-size: 16px;
+}
+.copyright-text {
+	padding-top: 10px;
 }
 
 .social-links {
@@ -90,7 +101,8 @@
 }
 
 @include mq( $from: medium ){
-	.footer__top {
+	.footer__top,
+	.footer2__top {
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
@@ -98,5 +110,7 @@
 
 	.footer-widget {
 		flex-basis: 30%;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }

@@ -16,9 +16,9 @@ const Screen2 = ( props ) => {
 					<h2>{ title }</h2>
 				) : null }
 			</div>	
-            <div className="row screen2-blocks">
+            <div className="row -blocks">
                {stagesCreation.map((term, index) => (
-                <div className="col-md-3 ">    
+                <div className="col-md-3 screen2-row">    
                     <div className="screen2-block">                    
                         {!isEmpty(term.iconSite) ? (
                             <div className="screen2-block__icon">

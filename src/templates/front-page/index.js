@@ -7,9 +7,8 @@ import Screen3 from "../../components/home/screen3";
 import Screen4 from "../../components/home/screen4";
 import Screen5 from "../../components/home/screen5";
 import Screen6 from "../../components/home/screen6";
-//import Search from "../../components/home/search";
-//import FeaturedPosts from "../../components/home/feature-posts";
-//import LatestPosts from '../../components/home/latest-posts';
+import Screen7 from "../../components/home/screen7";
+import Screen8 from "../../components/home/screen8";
 import Error from "../../components/error";
 import { isEmpty } from 'lodash';
 
@@ -17,7 +16,7 @@ const FrontPage = ( props ) => {
 
 	const {
 		      pageContext: {
-			      page: { AcfHome: { screen1, screen2, screen3, screen4, screen5, screen6 } },
+			      page: { AcfHome: { screen1, screen2, screen3, screen4, screen5, screen6, screen7, screen8 } },
 				  page			      
 		      }
 	      } = props;
@@ -34,7 +33,9 @@ const FrontPage = ( props ) => {
 						<Screen3 data={ screen3 }/>	
 						<Screen4 data={ screen4 }/>			
 						<Screen5 data={ screen5 }/>	
-						<Screen6 data={ screen6 }/>						
+						<Screen6 data={ screen6 }/>	
+						<Screen7 data={ screen7 }/>
+						<Screen8 data={ screen8 }/>					
 					</>
 				) : (
 					<Error message="Something Went Wrong"/>

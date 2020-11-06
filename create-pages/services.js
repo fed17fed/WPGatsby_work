@@ -30,7 +30,7 @@ query GET_SERVICES {
 			}
 		  }
 		}
-		menuItems(where: {location: TOP, parentId: "6"}) {
+		menuItems(where: {location: HCMS_MENU_SIDEBAR, parentId: "6"}) {
 			edges {
 			  node {
 				id

@@ -61,3 +61,9 @@
     text-align: center;
     color: #8a8a8a;
 }
+
+@media(max-width: 767px){
+    .screen3-block {
+        min-height: 200px;
+    }
+}
