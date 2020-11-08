@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-wordpress-theme-phoenix",
+  "name": "Olympweb-Webgenerator",
   "version": "2.0.5",
-  "description": "Gatsby WordPress Theme Phoenix",
+  "description": "Gatsby Olympweb Webgenerator",
   "main": "index.js",
   "dependencies": {
     "@storybook/addon-storysource": "^5.3.19",
@@ -46,7 +46,7 @@
     "babel-loader": "^8.1.0",
     "babel-preset-gatsby": "^0.4.2",
     "babel-preset-react-app": "^9.1.2",
-    "gatsby": "^2.21.33",
+    "gatsby": "^2.25.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.0.1",
     "prettier": "^2.0.5",
@@ -64,12 +64,12 @@
   "author": "Imran Sayed",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imranhsayed/gatsby-wordpress-themes/issues"
+    "url": "https://github.com/"
   },
-  "homepage": "https://github.com/imranhsayed/gatsby-wordpress-themes#readme",
+  "homepage": "https://github.com/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imranhsayed/gatsby-wordpress-themes.git"
+    "url": "git+https://github.com/"
   },
   "keywords": [
     "gatsby",

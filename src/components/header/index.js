@@ -68,7 +68,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-	siteTitle: 'Phoenix: Gatsby WordPress Theme',
+	siteTitle: 'Olympweb: WebGenerator Gatsby',
 	data: {
 		HWGraphQL: {}
 	},
