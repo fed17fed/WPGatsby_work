@@ -5,7 +5,7 @@ const singlePostPageTemplate = require.resolve(`../src/templates/post/index.js`)
 const GET_POSTS = `
 query GET_POSTS {
   HWGraphQL {
-    posts(first: 5000) {
+    posts(first: 5000, where: {categoryId: 2}) {
       nodes {
         id
         title
@@ -20,7 +20,7 @@ query GET_POSTS {
 			sourceUrl
             sourceUrlSharp {
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 1920) {
                   base64
                   aspectRatio
                   src
@@ -28,11 +28,51 @@ query GET_POSTS {
 				  sizes
 				  srcWebp
                   srcSetWebp
-               }
-            }
+                }
+              }
+		    }
 		  }
-		 }
-        }
+		}
+		AcfRubricSites {
+			titlePortfolio
+			subtitlePortfolio
+			title
+			subtitle
+			text
+			textBottom
+			button
+			butoonSee
+			tab1 {
+			  title
+			  text
+			  button
+			}
+			tab2 {
+			  title
+			  text
+			  button
+			}
+			blockExample {
+			  title
+			  images {
+				altText
+				sourceUrl
+				sourceUrlSharp {
+				  childImageSharp {
+					fluid {
+					  base64
+					  aspectRatio
+					  srcSet
+					  src
+					  sizes
+					  srcSetWebp
+					  srcWebp
+					}
+				  }
+				}
+			  }
+			}
+		} 
       }
     }
     categories(first: 5) {
@@ -44,18 +84,7 @@ query GET_POSTS {
 	        uri
 	      }
 	    }
-	 }
-	 menuItems(where: {location: HCMS_MENU_SIDEBAR, parentId: "6"}) {
-        edges {
-            node {
-              id
-			  menuItemId
-			  label
-			  url
-			  path
-           }
-        }
-    }
+	 } 
   }
 }
 `;
@@ -70,14 +99,14 @@ module.exports = async ( { actions, graphql } ) => {
 		return await graphql( GET_POSTS )
 			.then( ( { data } ) => {
 
-				const { HWGraphQL: { posts, categories, menuItems } } = data;
+				const { HWGraphQL: { posts, categories } } = data;
 
-				return { posts: posts.nodes, categories: categories.edges, menuItems: menuItems.edges };
+				return { posts: posts.nodes, categories: categories.edges };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then loop through the results i.e posts to create posts.
-	await fetchPosts().then( ( { posts, categories, menuItems } ) => {
+	await fetchPosts().then( ( { posts, categories} ) => {
 
 		// 2. Create Single PAGE: Loop through all posts and create single posts for posts.
 		posts &&
@@ -89,7 +118,7 @@ module.exports = async ( { actions, graphql } ) => {
 			createPage( {
 				path: `${ pageuri }`,
 				component: slash( singlePostPageTemplate ),
-				context: { ...page, categories, menuItems }, // pass single post page data in context, so its available in the singlePagetTemplate in props.pageContext.
+				context: { ...page, categories }, // pass single post page data in context, so its available in the singlePagetTemplate in props.pageContext.
 			} );
 
 		} );

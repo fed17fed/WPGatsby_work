@@ -1,6 +1,5 @@
 const { slash } = require( `gatsby-core-utils` );
-const customTemplates = [ '/blog/', '/', '/blog', 'blog' ];
-const singlePageTemplate = require.resolve(`../src/templates/page/index.js`);
+const servicesPageTemplate = require.resolve(`../src/templates/services/index.js`);
 
 // Get all the pages.
 const GET_SERVICES = `
@@ -41,6 +40,17 @@ query GET_SERVICES {
 			  }
 			}
 		}
+		menuItemstwo: menuItems(where: {location: HCMS_MENU_TOP, parentId: "9"}) {
+			edges {
+				node {
+				  id
+				  menuItemId
+				  label
+				  url
+				  path
+			   }
+			}
+		}
 	  }
 }
 `;
@@ -55,19 +65,19 @@ module.exports = async ( { actions, graphql } ) => {
 		return await graphql( GET_SERVICES )
 			.then( ( { data } ) => {
 
-				const { HWGraphQL: { pageBy, categories, menuItems } } = data;
+				const { HWGraphQL: { pageBy, categories, menuItems, menuItemstwo } } = data;
 
-				return { page: pageBy, categories: categories.edges, menuItems: menuItems.edges };
+				return { page: pageBy, categories: categories.edges, menuItems: menuItems.edges, menuItemstwo: menuItemstwo.edges };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then loop through the results i.e pages to create pages.
-	await fetchPosts().then( ( { page, categories, menuItems } ) => {
+	await fetchPosts().then( ( { page, categories, menuItems, menuItemstwo } ) => {
 
 				createPage( {
 					path: `${ page.uri }`,
-					component: slash( singlePageTemplate ),
-					context: { ...page, categories, menuItems }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
+					component: slash( servicesPageTemplate ),
+					context: { ...page, categories, menuItems, menuItemstwo }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
 				} );
 		
 

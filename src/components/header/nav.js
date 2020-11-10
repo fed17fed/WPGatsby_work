@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import  Link from 'gatsby-link';
 import { each, isEmpty } from 'lodash';
 import classnames from 'classnames';
-
 import DropdownIcon from '../icons/dropdown-icon';
 import { normalizePath } from "../../utils/functions";
 
@@ -118,7 +117,7 @@ const Nav = ( props ) => {
 														>
 															<Link
 																className="header-nav__submenu-link"
-																to={ normalizePath( subMenu.node.url ) }
+																to={ subMenu.node.path }
 															>
 																{ subMenu.node.label }
 															</Link>

@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { isEmpty } from 'lodash';
 import './style.scss';
 import Taxonomies from "../widgets/taxonomies";
+import Taxonomiestwo from "../widgets/taxonomiestwo";
 
-const Page = ( props ) => {
+const Services = ( props ) => {
 
 	const { data } = props;
 
@@ -18,22 +20,38 @@ const Page = ( props ) => {
 					    <aside className="col-md-3 aside">
 							{/* Taxonomy Widget */}
 							<Taxonomies taxonomies={data.menuItems} category={data.categories}/>
+							<Taxonomiestwo taxonomies={data.menuItemstwo} />
 						</aside>
-						<section className="col-md-9">
+						<section className="col-md-9">							
+
 							{ ! isEmpty( data.content ) ? (
 								<div className="page-block"
 									dangerouslySetInnerHTML={ {
 										__html: data.content,
 									} }
 								/>
-							) : null }							
-							{ ! isEmpty( data.AcfRubricServices.block2 ) ? (
+							) : null }
+							{ ! isEmpty( data.AcfServices.block1 ) ? (
 								<div className="page-block"
 									dangerouslySetInnerHTML={ {
-										__html: data.AcfRubricServices.block2,
+										__html: data.AcfServices.block1,
 									} }
 								/>
-							) : null }							
+							) : null }
+							{ ! isEmpty( data.AcfServices.block2 ) ? (
+								<div className="page-block"
+									dangerouslySetInnerHTML={ {
+										__html: data.AcfServices.block2,
+									} }
+								/>
+							) : null }
+							{ ! isEmpty( data.AcfServices.block3 ) ? (
+								<div className="page-block"
+									dangerouslySetInnerHTML={ {
+										__html: data.AcfServices.block3,
+									} }
+								/>
+							) : null }
 						</section>						
 					</div>
 				</div>
@@ -44,4 +62,4 @@ const Page = ( props ) => {
 	);
 };
 
-export default Page;
+export default Services;

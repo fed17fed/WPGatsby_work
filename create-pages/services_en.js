@@ -1,6 +1,6 @@
 const { slash } = require( `gatsby-core-utils` );
 const customTemplates = [ '/blog/', '/', '/blog', 'blog' ];
-const singlePageTemplate = require.resolve(`../src/templates/page/index.js`);
+const servicesPageTemplate = require.resolve(`../src/templates/services/index.js`);
 
 // Get all the pages.
 const GET_SERVICES = `
@@ -68,7 +68,7 @@ module.exports = async ( { actions, graphql } ) => {
 
 				createPage( {
 					path: `${ pageuri }`,
-					component: slash( singlePageTemplate ),
+					component: slash( servicesPageTemplate ),
 					context: { ...page, categories, menuItems }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
 				} );
 

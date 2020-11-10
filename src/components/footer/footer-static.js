@@ -1,4 +1,5 @@
 //import { normalizePath } from "../../utils/functions";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import FacebookIcon from "../icons/facebook-icon";
 import TwitterIcon from "../icons/twitter-icon";
 import InstagramIcon from "../icons/instagram-icon";

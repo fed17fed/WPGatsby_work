@@ -1,3 +1,4 @@
+const createAllPages = require( './create-pages/pages' );
 const createServices = require( './create-pages/services' );
 //const createServicesen = require( './create-pages/services_en' );
 const createAllPosts = require( './create-pages/posts' );
@@ -10,6 +11,7 @@ const path = require( 'path' );
 
 // Create all pages.
 exports.createPages = async ( { actions, graphql } ) => {	
+	await createAllPages( { actions, graphql } );
 	await createServices( { actions, graphql } );
 	//await createServicesen( { actions, graphql } );
 	await createAllPosts( { actions, graphql } );
