@@ -34,7 +34,6 @@
 
 // Menu
 .header-nav {
-
 	display: flex;
 	position: fixed;
 	top: 70px;
@@ -92,7 +91,7 @@
 
 		.header-nav__toggle-menu-btn {
 			padding-left: 3px;
-			margin-top: -6px;
+			margin-top: -3px;
 		}
 
 		&.menu-has-children .header-nav__toggle-menu-btn::after {

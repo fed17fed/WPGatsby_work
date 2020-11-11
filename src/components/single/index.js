@@ -10,7 +10,7 @@ const Single = ( { data } ) => {
 		return null;
 	}
     
-	const { id, postId, title, content, featuredImage, AcfRubricSites } = data;
+	const { id, postId, title, featuredImage, AcfRubricSites } = data;
 
 	return (
 		<div className="post-container">
@@ -29,10 +29,27 @@ const Single = ( { data } ) => {
 				<article
 					data-id={id}
 					id={`post-${postId}`}
-					className={`post-${postId} post-content`}>	
-					
+					className={`post-${postId} post-content`}>
 					{/* .entry-content */}					
-					{AcfRubricSites.title}
+					{ ! isEmpty( AcfRubricSites.title )  ? (
+						<div className="wrapper">
+						   { AcfRubricSites.title }
+						</div>
+					) : null }
+					{ ! isEmpty( AcfRubricSites.subtitle )  ? (
+						<div className="wrapper">
+						   { AcfRubricSites.subtitle }
+						</div>
+					) : null }
+					{ ! isEmpty( AcfRubricSites.text )  ? (
+						<div className="wrapper" dangerouslySetInnerHTML={{ __html: AcfRubricSites.text }} />						
+					) : null }
+					{ ! isEmpty( AcfRubricSites.button )  ? (
+						<div className="wrapper">
+						   { AcfRubricSites.button }
+						</div>
+					) : null }
+					
 				</article>
 		  </div>
 		</div>

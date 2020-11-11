@@ -1,7 +1,7 @@
 /**
  * External dependencies.
  */
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
@@ -55,7 +55,7 @@ export default ( props ) => {
 				` }
 			render={ data => (
 				<>
-					<SEO title="Olympweb: WebGenerator Gatsby" header={ data.HWGraphQL.header }/>
+					<SEO header={ data.HWGraphQL.header }/>
 					<Header data={ data }/>
 				</>
 			) }
@@ -63,12 +63,9 @@ export default ( props ) => {
 	)
 }
 
-Header.propTypes = {
-	siteTitle: PropTypes.string,
-};
 
-Header.defaultProps = {
-	siteTitle: 'Olympweb: WebGenerator Gatsby',
+
+Header.defaultProps = {	
 	data: {
 		HWGraphQL: {}
 	},

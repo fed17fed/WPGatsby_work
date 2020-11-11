@@ -13,7 +13,11 @@ query GET_POSTS {
         content
 		date
 		slug
-        uri
+		uri
+		seo {
+            title
+            metaDesc
+        }		
 		featuredImage {
 			node {
 			altText
@@ -101,12 +105,12 @@ module.exports = async ( { actions, graphql } ) => {
 
 				const { HWGraphQL: { posts, categories } } = data;
 
-				return { posts: posts.nodes, categories: categories.edges };
+				return { posts: posts.nodes, categories: categories.edges, seo: posts.nodes.seo  };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then loop through the results i.e posts to create posts.
-	await fetchPosts().then( ( { posts, categories} ) => {
+	await fetchPosts().then( ( { posts, categories, seo } ) => {
 
 		// 2. Create Single PAGE: Loop through all posts and create single posts for posts.
 		posts &&
@@ -118,7 +122,7 @@ module.exports = async ( { actions, graphql } ) => {
 			createPage( {
 				path: `${ pageuri }`,
 				component: slash( singlePostPageTemplate ),
-				context: { ...page, categories }, // pass single post page data in context, so its available in the singlePagetTemplate in props.pageContext.
+				context: { ...page, categories, seo }, // pass single post page data in context, so its available in the singlePagetTemplate in props.pageContext.
 			} );
 
 		} );

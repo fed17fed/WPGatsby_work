@@ -1,15 +1,15 @@
 import React from "react";
 import Layout from "../../components/layout";
-import Services from '../../components/services';
+import Contacts from '../../components/contacts';
 import SEO from "../../components/seo";
 
-const ServicesTemplate = ( props ) => {
+const ContactsTemplate = ( props ) => {
 
 	return (
 		<Layout>
 			<SEO title={ props.pageContext.title } description={ props.pageContext.metaDesc } />
-			<Services data={ props.pageContext }/>
+			<Contacts data={ props.pageContext }/>
 		</Layout>
 	)
 };
-export default ServicesTemplate;
+export default ContactsTemplate;

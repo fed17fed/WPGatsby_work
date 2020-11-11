@@ -1,0 +1,59 @@
+@import "../../sass/essentials";
+
+.page-content-wrap {
+
+	display: grid;
+	padding-bottom: 48px;
+	grid-template-columns: 100%;
+
+	@media only screen and ( min-width: $tablet ) {
+		grid-template-columns: 70% 30%;
+	}
+
+	.page-content {
+
+		padding-bottom: 48px;
+
+		@media only screen and ( min-width: $tablet ) {
+			padding-right: 48px;
+			padding-bottom: 0;
+		}
+	}
+}
+
+.services-section {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.page-block {
+	margin: 20px 0 40px;
+}
+.service-title1 {
+    font-size: 20px ;
+    font-weight: 600 ;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.serv-sub-sec-price p, .serv-sub-sec-price {
+    font-size: 14px;
+}
+.serv-sub-sec-price p {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    margin: 10px 0;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(196,196,196,.7);
+    border-radius: 40px;
+    align-items: center;
+}
+.serv-sub-section .price {
+    color: #2972cd;
+    font-size: 22px;   
+}

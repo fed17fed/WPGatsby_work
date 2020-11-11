@@ -1,9 +1,13 @@
 module.exports = {
 	siteMetadata: {
-		title: `Olympweb Webgenerator`,
-		description: `Turnkey website development`,
-		author: `@kav17`,
-	},
+		title: "Olympweb Webgenerator",
+		titleTemplate: "%s · Olympweb",
+		description:
+		  "Turnkey website development.",
+		url: "https://optimistic-cray-9639bf.netlify.app/", // No trailing slash allowed!
+		image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
+		twitterUsername: "@occlumency",
+	  },	
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-transformer-sharp`,

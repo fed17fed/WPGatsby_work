@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../../components/layout";
+//import SEO from "../../components/seo"
 import Hero from "../../components/home/hero";
 import Screen1 from "../../components/home/screen1";
 import Screen2 from "../../components/home/screen2";
@@ -24,6 +25,7 @@ const FrontPage = ( props ) => {
 
 	return (
 		<Layout>
+			 
 			{
 				! isEmpty( props.pageContext ) ? (
 					<>

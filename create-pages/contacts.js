@@ -1,11 +1,11 @@
 const { slash } = require( `gatsby-core-utils` );
-const servicesPageTemplate = require.resolve(`../src/templates/services/index.js`);
+const contactsPageTemplate = require.resolve(`../src/templates/contacts/index.js`);
 
 // Get all the pages.
 const GET_SERVICES = `
 query GET_SERVICES {
 	HWGraphQL {
-		pageBy(pageId: 21) {
+		pageBy(pageId: 15) {
 		  title
 		  content
 		  slug
@@ -17,10 +17,19 @@ query GET_SERVICES {
 			title
 			metaDesc
 		  }
-		  AcfServices {
-			block1
-			block2
-			block3
+		  AcfContact {
+			mapContact  
+			addressBlock { 
+			  block1
+			  block2
+			  block3
+			}
+			carousel {
+			  name
+			  text
+			  button
+			  link	
+			}  
 		  }
 		}
 		categories(where: {name: "Websites and online stores"}) {
@@ -80,7 +89,7 @@ module.exports = async ( { actions, graphql } ) => {
 
 				createPage( {
 					path: `${ page.uri }`,
-					component: slash( servicesPageTemplate ),
+					component: slash( contactsPageTemplate ),
 					context: { ...page, categories, menuItems, menuItemstwo }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
 				} );
 		

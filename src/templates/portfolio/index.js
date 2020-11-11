@@ -1,15 +1,15 @@
 import React from "react";
 import Layout from "../../components/layout";
-import Services from '../../components/services';
+import Portfolio from '../../components/portfolio';
 import SEO from "../../components/seo";
 
-const ServicesTemplate = ( props ) => {
+const PortfolioTemplate = ( props ) => {
 
 	return (
 		<Layout>
 			<SEO title={ props.pageContext.title } description={ props.pageContext.metaDesc } />
-			<Services data={ props.pageContext }/>
+			<Portfolio data={ props.pageContext }/>
 		</Layout>
 	)
 };
-export default ServicesTemplate;
+export default PortfolioTemplate;

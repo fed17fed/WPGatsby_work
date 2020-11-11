@@ -14,6 +14,10 @@ query GET_PAGES {
 		date
 		slug
 		uri
+		seo {
+			title
+			metaDesc
+		}
 		AcfRubricServices {
 			blok2
 		}

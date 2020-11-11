@@ -12,7 +12,11 @@ query GET_POSTS {
         name
         slug
         uri
-        id
+		id
+		seo {
+            title
+            metaDesc
+        }
         posts(first: 5000) {
           edges {
             node {
