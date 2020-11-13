@@ -20,7 +20,18 @@
 		}
 	}
 }
-
+.page {
+   
+}
+.page .section3 {
+    padding: 60px 0;
+}
+.page-block h1 {
+    font-size: 2.5rem;
+}
+.page-block h2 {
+    font-size: 30px;
+}
 .services-section {
     padding: 10px;
     margin-bottom: 30px;
@@ -43,7 +54,7 @@
 .serv-sub-sec-price p, .serv-sub-sec-price {
     font-size: 14px;
 }
-.serv-sub-sec-price p {
+.serv-sub-sec-price {
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
@@ -56,4 +67,16 @@
 .serv-sub-section .price {
     color: #2972cd;
     font-size: 22px;   
+}
+.page-nametype {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px ;
+    line-height: 43px ;
+    text-align: center ;
+    color: #3e3f43 ;
+    margin-bottom: 20px ;
+}
+.page .post-popapp {    
+    margin: 20px 0 40px;
 }

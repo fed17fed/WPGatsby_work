@@ -9,7 +9,7 @@ const Taxonomiestwo = ( { taxonomies, category } ) => {
 		return null;
 	}
 	
-	const websitesname = 'WEBSITE SUPPORT AND DEVELOPMENT';	  
+	const websitesname = 'Website support and development';	  
 	return (
 		<div className="taxonomies-widget">
 			<h2>{websitesname}</h2>

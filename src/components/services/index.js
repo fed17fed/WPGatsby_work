@@ -12,17 +12,14 @@ const Services = ( props ) => {
 	return (
 		<>
 			{ ! isEmpty( data )  ? (
-				<div className="container wrapper">
-					{ ! isEmpty( data.title )  ? (
-						<h2>{ data.title }</h2>
-					) : null }
+				<div className="container wrapper services">					
 					<div className="row">
 					    <aside className="col-md-3 aside">
 							{/* Taxonomy Widget */}
 							<Taxonomies taxonomies={data.menuItems} category={data.categories}/>
 							<Taxonomiestwo taxonomies={data.menuItemstwo} />
 						</aside>
-						<section className="col-md-9">							
+						<section className="col-md-9 serv-cont">							
 
 							{ ! isEmpty( data.content ) ? (
 								<div className="page-block"

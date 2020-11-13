@@ -50,7 +50,37 @@ query GET_SERVICES {
 			   }
 			}
 		}
-	  }
+		allReviews: pageBy(pageId: 13) {
+			AcfHome {
+			  screen6 {
+				title
+				subtitle
+				reviewsTable {
+				  iconSite {
+					altText
+					sourceUrl
+					sourceUrlSharp {
+					  childImageSharp {
+						fluid {
+						  base64
+						  aspectRatio
+						  srcSet
+						  src
+						  sizes
+						  srcSetWebp
+						  srcWebp
+						}
+					  }
+					}
+				  }
+				  titleName
+				  situation
+				  reviewText
+				}
+			  }
+			}
+		  }
+	}
 }
 `;
 
@@ -64,19 +94,19 @@ module.exports = async ( { actions, graphql } ) => {
 		return await graphql( GET_SERVICES )
 			.then( ( { data } ) => {
 
-				const { HWGraphQL: { pageBy, categories, menuItems, menuItemstwo } } = data;
+				const { HWGraphQL: { pageBy, categories, menuItems, menuItemstwo, allReviews } } = data;
 
-				return { page: pageBy, categories: categories.edges, menuItems: menuItems.edges, menuItemstwo: menuItemstwo.edges };
+				return { page: pageBy, categories: categories.edges, menuItems: menuItems.edges, menuItemstwo: menuItemstwo.edges, allReviews: allReviews.AcfHome.screen6 };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then loop through the results i.e pages to create pages.
-	await fetchPosts().then( ( { page, categories, menuItems, menuItemstwo } ) => {
+	await fetchPosts().then( ( { page, categories, menuItems, menuItemstwo, allReviews } ) => {
 
 				createPage( {
 					path: `${ page.uri }`,
 					component: slash( aboutPageTemplate ),
-					context: { ...page, categories, menuItems, menuItemstwo }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
+					context: { ...page, categories, menuItems, menuItemstwo, allReviews }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
 				} );
 		
 

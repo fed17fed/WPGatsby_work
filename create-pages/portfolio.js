@@ -50,7 +50,100 @@ query GET_SERVICES {
 			   }
 			}
 		}
-	  }
+		allPortfolio: pageBy(pageId: 13) {
+			AcfHome {
+				screen4 {
+					title
+					subtitle
+					seeAll
+					orderButtonBlock1
+					siteType {
+					  nameSiteType1
+					  nameSiteType2
+					  nameSiteType3
+					  nameSiteType4
+					  businessCardwebsite {
+						nameSite  
+						images {
+						  altText
+						  sourceUrl					  
+						  sourceUrlSharp {
+							childImageSharp {
+							  fluid {
+								base64
+								aspectRatio
+								srcSet
+								src
+								sizes
+								srcSetWebp
+								srcWebp
+							  }
+							}
+						  }
+						}
+					  }
+					  corporateWebsites {
+						images {
+						  altText
+						  sourceUrl
+						  sourceUrlSharp {
+							childImageSharp {
+							  fluid {
+								base64
+								aspectRatio
+								src
+								srcSet
+								sizes
+								srcSetWebp
+								srcWebp
+							  }
+							}
+						  }
+						}
+					  }
+					  landPage {
+						images {
+						  altText
+						  sourceUrl
+						  sourceUrlSharp {
+							childImageSharp {
+							  fluid {
+								base64
+								aspectRatio
+								src
+								srcSet
+								sizes
+								srcSetWebp
+								srcWebp
+							  }
+							}
+						  }
+						}
+					  }
+					  onlineShops {
+						images {
+						  altText
+						  sourceUrl
+						  sourceUrlSharp {
+							childImageSharp {
+							  fluid {
+								base64
+								aspectRatio
+								src
+								srcSet
+								sizes
+								srcSetWebp
+								srcWebp
+							  }
+							}
+						  }
+						}
+					  }
+					}
+				  }
+			}
+	    }		
+    }
 }
 `;
 
@@ -64,19 +157,19 @@ module.exports = async ( { actions, graphql } ) => {
 		return await graphql( GET_SERVICES )
 			.then( ( { data } ) => {
 
-				const { HWGraphQL: { pageBy, categories, menuItems, menuItemstwo } } = data;
+				const { HWGraphQL: { pageBy, categories, menuItems, menuItemstwo, allPortfolio } } = data;
 
-				return { page: pageBy, categories: categories.edges, menuItems: menuItems.edges, menuItemstwo: menuItemstwo.edges };
+				return { page: pageBy, categories: categories.edges, menuItems: menuItems.edges, menuItemstwo: menuItemstwo.edges, allPortfolio: allPortfolio.AcfHome.screen4 };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then loop through the results i.e pages to create pages.
-	await fetchPosts().then( ( { page, categories, menuItems, menuItemstwo } ) => {
+	await fetchPosts().then( ( { page, categories, menuItems, menuItemstwo, allPortfolio } ) => {
 
 				createPage( {
 					path: `${ page.uri }`,
 					component: slash( portfolioPageTemplate ),
-					context: { ...page, categories, menuItems, menuItemstwo }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
+					context: { ...page, categories, menuItems, menuItemstwo, allPortfolio }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
 				} );
 		
 

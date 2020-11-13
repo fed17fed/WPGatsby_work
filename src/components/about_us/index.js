@@ -4,6 +4,7 @@ import { isEmpty } from 'lodash';
 import './style.scss';
 import Taxonomies from "../widgets/taxonomies";
 import Taxonomiestwo from "../widgets/taxonomiestwo";
+import Screen6 from "../home/screen6";
 
 const Aboutus = ( props ) => {
 
@@ -13,9 +14,7 @@ const Aboutus = ( props ) => {
 		<>
 			{ ! isEmpty( data )  ? (
 				<div className="container wrapper">
-					{ ! isEmpty( data.title )  ? (
-						<h2>{ data.title }</h2>
-					) : null }
+					
 					<div className="row">
 					    <aside className="col-md-3 aside">
 							{/* Taxonomy Widget */}
@@ -23,9 +22,11 @@ const Aboutus = ( props ) => {
 							<Taxonomiestwo taxonomies={data.menuItemstwo} />
 						</aside>
 						<section className="col-md-9">							
-
+						{ ! isEmpty( data.title )  ? (
+					  	    <h2>{ data.title }</h2>
+					    ) : null }
 							{ ! isEmpty( data.content ) ? (
-								<div className="page-block"
+								<div className="about-block"
 									dangerouslySetInnerHTML={ {
 										__html: data.content,
 									} }
@@ -33,7 +34,11 @@ const Aboutus = ( props ) => {
 							) : null }							
 						</section>						
 					</div>
+					<section className="section5">
+		                <Screen6 data={ data.allReviews }/>	
+		            </section>	
 				</div>
+
 			) : (
 				'Loading...'
 			) }

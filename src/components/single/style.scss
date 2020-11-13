@@ -54,3 +54,80 @@
     text-transform: uppercase;
     z-index: 9;
 }
+.post-title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px !important;
+    line-height: 43px !important;
+    text-align: center !important;
+    color: #3e3f43 !important;
+    margin: 70px 0 20px;
+}
+.post-subtitle {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px !important;
+    line-height: 29px !important;
+    text-align: center !important;
+    color: #8a8a8a !important;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.post-button {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #fff !important;
+    padding: 11px 22px;
+    background: linear-gradient(180deg,#5da5ef 0%,#236dc9 100%);
+    box-sizing: border-box;
+    border-radius: 50px;
+    width: 170px;    
+}
+.post-button::after {
+    content: "-->";
+    padding-left: 7px;
+}
+.post-but {
+    text-align: center;
+    margin: 40px 0 70px;
+}
+.post-tab {
+    width: 100%;
+    padding-bottom: 30px;
+    -webkit-columns: 3;
+    columns: 3;
+    -webkit-column-gap: 15px;
+    column-gap: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000;
+    padding: 14px 0;
+}
+.post-popapp {
+    text-align: center;
+    margin: 20px 0;
+}
+.post-popapp .popapp-but {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    padding: 10px 25px;
+}
+.product-advantages .no-active p {
+    color: #b3afaf ;
+}
+.section2 .screen4-seeall a {
+    bottom: 0;
+}
+.section4 {
+    padding: 100px 0 80px;
+}
+.section5 {
+    padding: 20px 0 80px;
+}

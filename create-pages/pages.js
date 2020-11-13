@@ -20,24 +20,26 @@ query GET_PAGES {
 		}
 		AcfRubricServices {
 			blok2
-		}
-		featuredImage {
-			node {
-			altText
-			sourceUrl
-            sourceUrlSharp {
-              childImageSharp {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-               }
-            }
-		  }
-		 }
-        }
+			nameType
+			indExample {
+				title
+				images {
+				altText
+				sourceUrl
+				sourceUrlSharp {
+				  childImageSharp {
+					fluid {
+					  base64
+					  aspectRatio
+					  src
+					  srcSet
+					  sizes
+					}
+				  }
+				}
+			  }
+			}
+		}		
       }
     }
     categories(first: 5) {

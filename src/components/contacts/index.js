@@ -12,17 +12,17 @@ const Contacts = ( props ) => {
 	return (
 		<>
 			{ ! isEmpty( data )  ? (
-				<div className="container wrapper">
-					{ ! isEmpty( data.title )  ? (
-						<h2>{ data.title }</h2>
-					) : null }
+				<div className="container wrapper contacts">					
 					<div className="row">
 					    <aside className="col-md-3 aside">
 							{/* Taxonomy Widget */}
 							<Taxonomies taxonomies={data.menuItems} category={data.categories}/>
 							<Taxonomiestwo taxonomies={data.menuItemstwo} />
 						</aside>
-						<section className="col-md-9">							
+						<section className="col-md-9">	
+						{ ! isEmpty( data.title )  ? (
+						   <h2>{ data.title }</h2>
+					    ) : null }						
 
 							{ ! isEmpty( data.content ) ? (
 								<div className="page-block"

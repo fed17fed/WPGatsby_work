@@ -40,6 +40,7 @@ query GET_POSTS {
 		AcfRubricSites {
 			titlePortfolio
 			subtitlePortfolio
+			typeSite
 			title
 			subtitle
 			text
@@ -89,6 +90,36 @@ query GET_POSTS {
 	      }
 	    }
 	 } 
+	 pageBy(pageId: 13) {
+        AcfHome {
+          screen6 {
+            title
+            subtitle
+            reviewsTable {
+              iconSite {
+                altText
+                sourceUrl
+                sourceUrlSharp {
+                  childImageSharp {
+                    fluid {
+                      base64
+                      aspectRatio
+                      srcSet
+                      src
+                      sizes
+                      srcSetWebp
+                      srcWebp
+                    }
+                  }
+                }
+              }
+              titleName
+              situation
+              reviewText
+            }
+          }
+        }
+      }
   }
 }
 `;
@@ -103,14 +134,14 @@ module.exports = async ( { actions, graphql } ) => {
 		return await graphql( GET_POSTS )
 			.then( ( { data } ) => {
 
-				const { HWGraphQL: { posts, categories } } = data;
+				const { HWGraphQL: { posts, categories, pageBy } } = data;
 
-				return { posts: posts.nodes, categories: categories.edges, seo: posts.nodes.seo  };
+				return { posts: posts.nodes, categories: categories.edges, seo: posts.nodes.seo, pageBy: pageBy.AcfHome.screen6 };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then loop through the results i.e posts to create posts.
-	await fetchPosts().then( ( { posts, categories, seo } ) => {
+	await fetchPosts().then( ( { posts, categories, seo, pageBy } ) => {
 
 		// 2. Create Single PAGE: Loop through all posts and create single posts for posts.
 		posts &&
@@ -122,7 +153,7 @@ module.exports = async ( { actions, graphql } ) => {
 			createPage( {
 				path: `${ pageuri }`,
 				component: slash( singlePostPageTemplate ),
-				context: { ...page, categories, seo }, // pass single post page data in context, so its available in the singlePagetTemplate in props.pageContext.
+				context: { ...page, categories, seo, pageBy }, // pass single post page data in context, so its available in the singlePagetTemplate in props.pageContext.
 			} );
 
 		} );
