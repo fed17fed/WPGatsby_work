@@ -1,7 +1,6 @@
 
 .screen8 {    
-    font-family: "Lato",sans-serif;
-    padding: 0px 50px 10px;
+    font-family: "Lato",sans-serif;    
     margin-bottom: 100px;
 }
 .screen8-blocks{
@@ -49,4 +48,8 @@
 }
 .screen8-slider {
     max-width: 100%;;
+}
+
+@media(max-width: 767px){
+
 }

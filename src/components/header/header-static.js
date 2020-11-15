@@ -15,8 +15,8 @@ const Header = ( { data } ) => {
 	const siteLogoURL = siteLogoUrl ? siteLogoUrl : defaultSiteLogoUrl;	
 
 	return (
-		<header className="site-header-container container">
-			<div className="site-header">
+		<header className="site-header-container ">
+			<div className="site-header container">
 				<div className="site-brand">
 					<Link to="/">
 						<img className="site-brand__logo" src={ siteLogoURL } width="200" height="55"

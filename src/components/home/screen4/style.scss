@@ -1,7 +1,6 @@
 
 .screen4 {    
-    font-family: "Lato",sans-serif;
-    padding: 0px 50px 10px;
+    font-family: "Lato",sans-serif;    
     margin-bottom: 0px;
 }
 .screen4-blocks{
@@ -136,5 +135,12 @@
 }
 .tab-content {
     margin-top: 10px;
+}
+
+@media ( max-width: 800px ){
+    .screen4-seeall a {
+        bottom: 15px;
+        padding: 7px 12px;
+    }
 }
  

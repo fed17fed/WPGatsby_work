@@ -14,7 +14,17 @@ const Screen6 = ( props ) => {
       infinite: true,
       centerPadding: "0px",
       slidesToShow: 3,
-      speed: 500
+      speed: 500,
+      responsive: [        
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 1
+          }
+        }
+      ]
   };
   const imgData = useStaticQuery(graphql`
         query {

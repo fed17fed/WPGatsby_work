@@ -1,7 +1,6 @@
 
 .screen6 {    
-    font-family: "Lato",sans-serif;
-    padding: 0px 50px 10px;
+    font-family: "Lato",sans-serif;    
     margin-bottom: 0px;
 }
 .screen6-blocks{
@@ -146,6 +145,9 @@
 .screen6-slider .slick-prev {
     z-index: 9;
 }
+.screen6-slider .slick-next {
+    right: 55px;
+}
 .screen6-slider .slick-next:before {
     content: url(../../../images/icons/noun_Arrow_3022745.svg);
     display: inline-block;
@@ -196,4 +198,10 @@
 .tab-content {
     margin-top: 10px;
 }
- 
+
+@media ( max-width: 600px ){
+    .screen6-slider .slick-prev,
+    .screen6-slider .slick-next {
+        top: 30%;
+    }
+}

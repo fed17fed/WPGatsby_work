@@ -1,59 +1,51 @@
-@import "../../sass/essentials";
-
-.page-content-wrap {
-
-	display: grid;
-	padding-bottom: 48px;
-	grid-template-columns: 100%;
-
-	@media only screen and ( min-width: $tablet ) {
-		grid-template-columns: 70% 30%;
-	}
-
-	.page-content {
-
-		padding-bottom: 48px;
-
-		@media only screen and ( min-width: $tablet ) {
-			padding-right: 48px;
-			padding-bottom: 0;
-		}
-	}
+.contacts-row {
+    padding: 40px 0;
 }
-
-.services-section {
-    padding: 10px;
-    margin-bottom: 30px;
+.contacts-block p {
+    margin-bottom: 0.3rem;
 }
-.page-block {
-	margin: 20px 0 40px;
+.section-carousel {
+    margin: 60px 0;
 }
-.service-title1 {
-    font-size: 20px ;
-    font-weight: 600 ;
+.block-name{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 24px;
+    color: #3e3f43;
+    min-height: 48px;
 }
-.row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+.section-carousel .screen4-block__show {    
+    padding: 15px;
 }
-.serv-sub-sec-price p, .serv-sub-sec-price {
+.contacts-block ul {
+    max-width: 208px;
+    padding-left: 20px;
+}
+.contacts-block li {
     font-size: 14px;
+    padding: 2px;
 }
-.serv-sub-sec-price p {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    margin: 10px 0;
-    background: #fff;
-    box-shadow: 0px 4px 10px rgba(196,196,196,.7);
-    border-radius: 40px;
-    align-items: center;
+.contacts-block ul li:before {
+    content: "✓";
+    padding-right: 5px;
+    color: #539ae8;
+    position: absolute;
+    left: 20px;
 }
-.serv-sub-section .price {
-    color: #2972cd;
-    font-size: 22px;   
+.contacts-more {
+    margin-top: 10px;
+    font-size: 14px;
+    margin-left: 20px;    
+}
+.contacts-popapp {
+    text-align: right;
+    margin: 20px 0 7px;
+}
+.contacts .popapp-but {
+    padding: 5px 20px;
+    font-size: 16px;
+}
+.slick-next {
+    right: -5px;
 }

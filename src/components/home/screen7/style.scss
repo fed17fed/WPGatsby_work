@@ -1,8 +1,8 @@
 
 .screen7 {    
-    font-family: "Lato",sans-serif;
-    padding: 80px 50px 10px;
+    font-family: "Lato",sans-serif;    
     margin-bottom: 0px;
+    margin-top: 80px;
 }
 .screen7-blocks{
     margin-top: 60px;
@@ -51,4 +51,10 @@
     list-style: disc;
     padding-left: 2rem;
     font-size: 16px;
+}
+
+@media(max-width: 767px){
+    .screen7 {            
+        margin-top: 40px;
+    }
 }

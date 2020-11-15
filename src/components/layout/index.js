@@ -6,7 +6,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-
+import ScrollTopArrow from "../scrolltoparrow";
 import './../../sass/common.scss';
 import Header from "../header";
 import Footer from "../footer";
@@ -17,6 +17,7 @@ const Layout = ( { children, data }) => {
     <>
       <Header data={ data }/> 
 	    <main className="main-container">{children}</main>
+      <ScrollTopArrow />      
 	    <Footer data={ data }/>
     </>
   )
