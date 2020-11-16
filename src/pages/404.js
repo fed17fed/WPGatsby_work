@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" header={ { siteTitle: 'Gatsby WordPres Theme - Phoneix' } }/>
+    <SEO title="404: Not found" header={ { siteTitle: '404 - Olympweb Webgenerator' } }/>
     <div className="conteiner">
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
