@@ -145,6 +145,7 @@ query GET_FRONT_PAGE {
 					}
 				  }
 				  corporateWebsites {
+					nameSite
 					images {
 					  altText
 					  sourceUrl
@@ -164,6 +165,7 @@ query GET_FRONT_PAGE {
 					}
 				  }
 				  landPage {
+					nameSite
 					images {
 					  altText
 					  sourceUrl
@@ -183,6 +185,7 @@ query GET_FRONT_PAGE {
 					}
 				  }
 				  onlineShops {
+					nameSite
 					images {
 					  altText
 					  sourceUrl

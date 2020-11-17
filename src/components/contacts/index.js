@@ -60,7 +60,7 @@ const Contacts = props => {
               <div className="row contacts-row">
                 {!isEmpty(data.AcfContact.addressBlock.block1) ? (
                   <div
-                    className="col-md-4 contacts-block"
+                    className="col-sm-4 contacts-block"
                     dangerouslySetInnerHTML={{
                       __html: data.AcfContact.addressBlock.block1,
                     }}
@@ -68,7 +68,7 @@ const Contacts = props => {
                 ) : null}
                 {!isEmpty(data.AcfContact.addressBlock.block2) ? (
                   <div
-                    className="col-md-4 contacts-block"
+                    className="col-sm-4 contacts-block"
                     dangerouslySetInnerHTML={{
                       __html: data.AcfContact.addressBlock.block2,
                     }}
@@ -76,7 +76,7 @@ const Contacts = props => {
                 ) : null}
                 {!isEmpty(data.AcfContact.addressBlock.block3) ? (
                   <div
-                    className="col-md-4 contacts-block"
+                    className="col-sm-4 contacts-block"
                     dangerouslySetInnerHTML={{
                       __html: data.AcfContact.addressBlock.block3,
                     }}

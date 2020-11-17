@@ -80,3 +80,8 @@
 .page .post-popapp {    
     margin: 20px 0 40px;
 }
+@media ( max-width: 480px ){
+    .page-block h1 {
+        font-size: 32px;
+    }
+}

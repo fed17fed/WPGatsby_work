@@ -141,6 +141,7 @@
     font-size: 40px;    
     color: #428bdd;
     width: 100px;
+    background: transparent;
 }
 .screen6-slider .slick-prev {
     z-index: 9;
@@ -155,6 +156,7 @@
     font-size: 40px;
     color: #428bdd;
     width: 100px;
+    background: transparent;
 }
 .slick-initialized .slick-slide {
     display: flex;
@@ -198,10 +200,23 @@
 .tab-content {
     margin-top: 10px;
 }
+@media ( max-width: 768px ){
+    .screen6-slider .slick-next {
+        right: 75px;
+    } 
+}
 
 @media ( max-width: 600px ){
     .screen6-slider .slick-prev,
     .screen6-slider .slick-next {
         top: 30%;
+    }    
+    .screen6-title h2 {       
+        font-size: 26px !important;
+        line-height: 36px !important;        
+    }
+    .screen6-subtitle {        
+        font-size: 20px !important;
+        line-height: 26px !important;        
     }
 }

@@ -131,3 +131,38 @@
 .section5 {
     padding: 20px 0 80px;
 }
+
+@media ( max-width: 768px ){
+    .entry-header {       
+        bottom: 0;
+        height: 100%;   
+        padding: 0;
+        justify-content: space-evenly;  
+        left: 0;  
+    }
+    .entry-title {        
+        font-size: 20px;
+        line-height: 30px;       
+        margin-bottom: 0;        
+    }
+    .entry-header .popapp-but {
+        font-size: 16px; 
+        padding: 7px 10px
+    }
+    .post-title {        
+        font-size: 26px !important;  
+        line-height: 36px !important;      
+        margin: 30px 0 20px;
+    }
+    .post-subtitle {       
+        font-size: 20px !important;
+        line-height: 26px !important;       
+    }
+}
+
+@media ( max-width: 420px ){
+    .entry-title {
+        font-size: 16px;
+        line-height: 20px;       
+    }
+}

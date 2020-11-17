@@ -49,3 +49,13 @@
 .slick-next {
     right: -5px;
 }
+@media ( max-width: 574px ){
+    .contacts-block {
+        padding-bottom: 10px;
+        width: 240px;
+        margin: 0 auto;
+    }
+    .section-carousel {
+        margin: 0px 0 60px;
+    }
+}

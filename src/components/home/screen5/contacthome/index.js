@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 import axios from 'axios'
+import InputMask from "react-input-mask";
 import './style.scss'
 
 const ContactHome = () => {
@@ -101,10 +102,12 @@ const ContactHome = () => {
           />
         </div>
         { <div>          
-          <input
+          <InputMask
+            mask="+4\9(999)999-99-999"
             id="telphone"
             name="telphone"
             type="tel" 
+            minlength="18"
             placeholder="Phone namber"           
             onChange={handleChange}
             value={values.telphone}

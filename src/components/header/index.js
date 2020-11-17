@@ -31,8 +31,7 @@ export default ( props ) => {
 						    }
 						    headerMenuItems: menuItems(where: {location: HCMS_MENU_HEADER, parentId: "5"}) {
 						      edges {
-						        node {
-						          id
+						        node {						          
 						          menuItemId
 						          label
 								  url

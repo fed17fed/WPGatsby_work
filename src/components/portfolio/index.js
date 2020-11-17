@@ -34,7 +34,7 @@ const Portfolio = ( props ) => {
               <div className="tab-item-wrapper">
                 <div className="row screen4-slider">               
                   {data.allPortfolio.siteType.landPage.map((term, index) => (                   
-                    <div className="col-md-4 screen4-block">
+                    <div className="col-xl-4 col-sm-6 screen4-block">
                       <div className="screen4-block__show">               
                         {!isEmpty(term.images) ? (
                           <div className="block-img">                      
