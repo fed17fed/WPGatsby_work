@@ -200,9 +200,12 @@
 .tab-content {
     margin-top: 10px;
 }
-@media ( max-width: 768px ){
+@media ( max-width: 1360px ){
     .screen6-slider .slick-next {
-        right: 75px;
+        right: 80px;
+    } 
+    .screen6-slider .slick-prev {
+        left: 0px;
     } 
 }
 

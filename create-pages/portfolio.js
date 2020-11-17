@@ -17,17 +17,7 @@ query GET_SERVICES {
 			title
 			metaDesc
 		  }		  
-		}
-		categories(where: {name: "Websites and online stores"}) {
-		  edges {
-			node {
-			  id
-			  name
-			  slug
-			  uri
-			}
-		  }
-		}
+		}		
 		menuItems(where: {location: HCMS_MENU_SIDEBAR, parentId: "6"}) {
 			edges {
 			  node {
@@ -83,6 +73,7 @@ query GET_SERVICES {
 						}
 					  }
 					  corporateWebsites {
+						nameSite
 						images {
 						  altText
 						  sourceUrl
@@ -102,6 +93,7 @@ query GET_SERVICES {
 						}
 					  }
 					  landPage {
+						nameSite
 						images {
 						  altText
 						  sourceUrl
@@ -121,6 +113,7 @@ query GET_SERVICES {
 						}
 					  }
 					  onlineShops {
+						nameSite
 						images {
 						  altText
 						  sourceUrl
@@ -157,19 +150,19 @@ module.exports = async ( { actions, graphql } ) => {
 		return await graphql( GET_SERVICES )
 			.then( ( { data } ) => {
 
-				const { HWGraphQL: { pageBy, categories, menuItems, menuItemstwo, allPortfolio } } = data;
+				const { HWGraphQL: { pageBy, menuItems, menuItemstwo, allPortfolio } } = data;
 
-				return { page: pageBy, categories: categories.edges, menuItems: menuItems.edges, menuItemstwo: menuItemstwo.edges, allPortfolio: allPortfolio.AcfHome.screen4 };
+				return { page: pageBy, menuItems: menuItems.edges, menuItemstwo: menuItemstwo.edges, allPortfolio: allPortfolio.AcfHome.screen4 };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then loop through the results i.e pages to create pages.
-	await fetchPosts().then( ( { page, categories, menuItems, menuItemstwo, allPortfolio } ) => {
+	await fetchPosts().then( ( { page, menuItems, menuItemstwo, allPortfolio } ) => {
 
 				createPage( {
 					path: `${ page.uri }`,
 					component: slash( portfolioPageTemplate ),
-					context: { ...page, categories, menuItems, menuItemstwo, allPortfolio }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
+					context: { ...page, menuItems, menuItemstwo, allPortfolio }, // pass single page data in context, so its available in the singlePagetTemplate in props.pageContext.
 				} );
 		
 
